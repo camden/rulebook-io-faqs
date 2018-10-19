@@ -2,29 +2,12 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import FAQ from '../components/faq'
 
-const FAQPage = ({ data }) => {
-  const page = data.faqsHJson
-
+const FAQPage = () => {
   return (
     <>
-      <h1>{page.name}</h1>
-      {page.faqs.map(faq => {
-        return <FAQ {...faq} />
-      })}
+      <h1>game name</h1>a single faq
     </>
   )
 }
-
-export const query = graphql`
-  query($slug: String!) {
-    faqsHJson(fields: { slug: { eq: $slug } }) {
-      name
-      faqs {
-        question
-        answer
-      }
-    }
-  }
-`
 
 export default FAQPage

@@ -1,6 +1,14 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    },
+  })
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `FaqsHJson`) {
@@ -11,6 +19,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       basePath: `faqs`,
       trailingSlash: false,
     })
+
     createNodeField({
       node,
       name: `slug`,
@@ -43,7 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        const faqPageTemplate = path.resolve(`src/templates/faq-page.js`)
+        const faqPageTemplate = path.resolve(`src/templates/game-page.js`)
 
         result.data.allFaqsHJson.edges.forEach(({ node }) => {
           const slug = node.fields.slug
