@@ -1,7 +1,6 @@
 import { FAQ } from '../types'
-import slug from 'slug'
-import config from 'config'
+import generateSlug from './_generate-slug'
 
-export default (faq: FAQ) => {
-  return slug(faq.question.toLowerCase()).substring(0, config.slugLength)
+export default (faq: FAQ): string => {
+  return generateSlug(faq)
 }

@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const generateSlug = require('./src/utils/_generate-slug')
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
@@ -39,6 +40,10 @@ exports.createPages = ({ graphql, actions }) => {
             allFaqsHJson {
               edges {
                 node {
+                  faqs {
+                    question
+                    answer
+                  }
                   fields {
                     slug
                   }
@@ -52,16 +57,25 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        const faqPageTemplate = path.resolve(`src/templates/game-page.js`)
+        const gamePageTemplate = path.resolve(`src/templates/game-page.js`)
+        const faqPageTemplate = path.resolve(`src/templates/faq-page.js`)
 
         result.data.allFaqsHJson.edges.forEach(({ node }) => {
           const slug = node.fields.slug
           createPage({
             path: slug,
-            component: faqPageTemplate,
+            component: gamePageTemplate,
             context: {
               slug,
             },
+          })
+
+          node.faqs.forEach(faq => {
+            const faqSlug = generateSlug(faq)
+            createPage({
+              path: `${slug}/${faqSlug}`,
+              component: faqPageTemplate,
+            })
           })
         })
       })
