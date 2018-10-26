@@ -75,6 +75,10 @@ exports.createPages = ({ graphql, actions }) => {
             createPage({
               path: `${slug}/${faqSlug}`,
               component: faqPageTemplate,
+              context: {
+                slug,
+                faq,
+              },
             })
           })
         })
