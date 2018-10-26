@@ -1,6 +1,4 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import FAQ from 'components/faq-item'
 
 const FAQPage = () => {
   return (

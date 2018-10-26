@@ -2,13 +2,18 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Rulebook.io FAQs',
   },
   plugins: [
     'gatsby-transformer-hjson',
-    'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        includePaths: ['src'],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
