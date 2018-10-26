@@ -19,3 +19,8 @@ body {
 a {
   -webkit-text-decoration-skip: objects;
 }
+
+.children {
+  max-width: 960px;
+  margin: 0 auto;
+}

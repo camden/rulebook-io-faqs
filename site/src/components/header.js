@@ -4,10 +4,10 @@ import styles from './header.module.scss'
 
 const Header = ({ siteTitle }) => {
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <div className={styles.title}>{siteTitle}</div>
       <div className={styles.search}>Search</div>
-    </div>
+    </header>
   )
 }
 

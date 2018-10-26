@@ -23,11 +23,9 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-typography`,
       options: {
-        google: {
-          families: ['Nunito Sans:400,400i,800,800i'],
-        },
+        pathToConfigModule: `src/utils/typography`,
       },
     },
     {
