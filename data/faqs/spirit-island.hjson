@@ -5,5 +5,9 @@
       question: This is a question?
       answer: This is an answer.
     }
+    {
+      question: How do you do the thing?
+      answer: You do it like this.
+    }
   ]
 }
