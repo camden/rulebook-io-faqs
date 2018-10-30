@@ -5,13 +5,14 @@ import generateSlug from 'utils/generate-slug'
 import Layout from 'components/layout'
 
 const GamePage = ({ data }) => {
-  const page = data.faqsHJson
+  const game = data.faqsHJson
 
   return (
     <Layout>
-      <h1>{page.name}</h1>
-      {page.faqs.map(faq => {
-        const slug = `${page.fields.slug}/${generateSlug(faq)}`
+      <h1>{game.name}</h1>
+      <p>{game.description}</p>
+      {game.faqs.map(faq => {
+        const slug = `${game.fields.slug}/${generateSlug(faq)}`
 
         return (
           <div key={slug}>
@@ -27,6 +28,7 @@ export const query = graphql`
   query($slug: String!) {
     faqsHJson(fields: { slug: { eq: $slug } }) {
       name
+      description
       fields {
         slug
       }
