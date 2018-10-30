@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { FAQ } from '../types'
+import Link from 'components/link'
 
 const FAQItem = ({ faq, slug }: { faq: FAQ; slug: string }) => {
   return (
