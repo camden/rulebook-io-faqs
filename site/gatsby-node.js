@@ -10,8 +10,10 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
   })
 }
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+exports.onCreateNode = props => {
+  const { node, getNode, actions, createContentDigest, createNodeId } = props
   const { createNodeField } = actions
+
   if (node.internal.type === `FaqsHJson`) {
     const fileNode = getNode(node.parent)
     const slug = createFilePath({
@@ -19,6 +21,15 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       getNode,
       basePath: `faqs`,
       trailingSlash: false,
+    })
+
+    node.faqs.forEach(faq => {
+      createFaqItemNode(
+        props,
+        Object.assign({}, faq, {
+          game: node.name,
+        })
+      )
     })
 
     createNodeField({
@@ -29,8 +40,34 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+function createFaqItemNode(
+  { actions, createNodeId, createContentDigest },
+  data
+) {
+  const { createNode } = actions
+
+  createNode({
+    id: createNodeId(`${data.game}-${data.question}`),
+    parent: null,
+    children: [],
+    question: data.question,
+    answer: data.answer,
+    game: data.game,
+    internal: {
+      type: `FaqItem`,
+      content: JSON.stringify(data),
+      contentDigest: createContentDigest(data),
+    },
+  })
+}
+
+exports.createPages = ({
+  graphql,
+  actions,
+  createNodeId,
+  createContentDigest,
+}) => {
+  const { createPage, createNode } = actions
 
   return new Promise((resolve, reject) => {
     resolve(

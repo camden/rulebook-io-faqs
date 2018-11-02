@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Cam Bickel <cam@bickel.io>",
   "dependencies": {
+    "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.1.1",
     "gatsby": "^2.0.19",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.5",

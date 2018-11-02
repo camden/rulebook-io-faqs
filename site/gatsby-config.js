@@ -15,6 +15,17 @@ module.exports = {
       },
     },
     {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        fields: ['title'],
+        resolvers: {
+          FaqsHJson: {
+            title: node => node.name,
+          },
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
