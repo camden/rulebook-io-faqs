@@ -29,7 +29,6 @@ export default class Search extends Component<SearchProps, SearchState> {
   }
 
   render() {
-    console.log(this.state.results)
     return (
       <div>
         <input type="text" value={this.state.query} onChange={this.search} />

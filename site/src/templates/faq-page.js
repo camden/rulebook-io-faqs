@@ -1,9 +1,10 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from 'components/layout'
 
 const FAQPage = ({ data, pageContext }) => {
-  const faq = pageContext.faq
+  const faq = data.faqItem
 
   return (
     <Layout>
@@ -13,5 +14,16 @@ const FAQPage = ({ data, pageContext }) => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query($slug: String!) {
+    faqItem(slug: { eq: $slug }) {
+      game
+      question
+      answer
+      discussion
+    }
+  }
+`
 
 export default FAQPage

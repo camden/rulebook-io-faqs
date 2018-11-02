@@ -134,7 +134,7 @@ exports.createPages = ({
             path: faq.slug,
             component: faqPageTemplate,
             context: {
-              faq,
+              slug: faq.slug,
             },
           })
         })
