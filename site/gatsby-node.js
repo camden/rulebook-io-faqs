@@ -47,6 +47,8 @@ function createFaqItemNode(
 ) {
   const { createNode } = actions
 
+  const faqSlug = generateSlug(data)
+
   createNode({
     id: createNodeId(`${data.game}-${data.question}-${data.answer}`),
     parent: null,
@@ -55,6 +57,7 @@ function createFaqItemNode(
     answer: data.answer,
     game: data.game,
     gameSlug: data.gameSlug,
+    slug: `${data.gameSlug}/${faqSlug}`,
     internal: {
       type: `FaqItem`,
       content: JSON.stringify(data),
@@ -94,8 +97,7 @@ exports.createPages = ({
                 node {
                   question
                   answer
-                  game
-                  gameSlug
+                  slug
                 }
               }
             }
@@ -109,7 +111,6 @@ exports.createPages = ({
         const gamePageTemplate = path.resolve(`src/templates/game-page.js`)
         const faqPageTemplate = path.resolve(`src/templates/faq-page.js`)
 
-        console.log(result)
         const { allGamesHJson, allFaqItem } = result.data
         const games = allGamesHJson.edges
         const faqs = allFaqItem.edges
@@ -126,9 +127,8 @@ exports.createPages = ({
         })
 
         faqs.forEach(({ node: faq }) => {
-          const faqSlug = generateSlug(faq)
           createPage({
-            path: `${faq.gameSlug}/${faqSlug}`,
+            path: faq.slug,
             component: faqPageTemplate,
             context: {
               faq,

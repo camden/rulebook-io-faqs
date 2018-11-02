@@ -17,10 +17,17 @@ module.exports = {
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
-        fields: ['title'],
+        fields: ['title', 'question', 'answer'],
         resolvers: {
           GamesHJson: {
             title: node => node.name,
+            path: node => node.slug,
+          },
+          FaqItem: {
+            title: node => node.question,
+            question: node => node.question,
+            answer: node => node.answer,
+            path: node => node.slug,
           },
         },
       },
