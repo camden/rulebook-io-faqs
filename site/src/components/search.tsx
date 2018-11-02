@@ -2,8 +2,24 @@ import React, { Component } from 'react'
 import { Index } from 'elasticlunr'
 import Link from 'components/link'
 
-// Search component
-export default class Search extends Component {
+type SearchProps = {
+  searchIndex: any
+}
+
+type SearchState = {
+  query: string
+  results: [
+    {
+      id: string
+      title: string
+      path: string
+    }?
+  ]
+}
+
+export default class Search extends Component<SearchProps, SearchState> {
+  index: any
+
   constructor(props) {
     super(props)
     this.state = {
