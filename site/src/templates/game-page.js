@@ -6,6 +6,8 @@ import FAQItem from 'components/faq-item'
 import Layout from 'components/layout'
 import Breadcrumbs from 'components/breadcrumbs'
 
+import styles from './game-page.module.scss'
+
 const GamePage = ({ data }) => {
   const game = data.gamesHJson
 
@@ -13,12 +15,12 @@ const GamePage = ({ data }) => {
     <Layout>
       <Breadcrumbs />
       <h1>{game.name}</h1>
-      <p>{game.description}</p>
+      <p className={styles.description}>{game.description}</p>
       {game.faqs.map(faq => {
         const slug = `${game.fields.slug}/${generateSlug(faq)}`
 
         return (
-          <div key={slug}>
+          <div key={slug} className={styles.faqContainer}>
             <FAQItem faq={faq} slug={slug} />
           </div>
         )

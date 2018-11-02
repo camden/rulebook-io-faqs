@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Link from 'components/link'
 import Layout from 'components/layout'
 import Breadcrumbs from 'components/breadcrumbs'
 
