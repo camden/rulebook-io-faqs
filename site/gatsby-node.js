@@ -29,7 +29,8 @@ exports.onCreateNode = props => {
         Object.assign({}, faq, {
           game: node.name,
           gameSlug: slug,
-        })
+        }),
+        node.id
       )
     })
 
@@ -43,7 +44,8 @@ exports.onCreateNode = props => {
 
 function createFaqItemNode(
   { actions, createNodeId, createContentDigest },
-  data
+  data,
+  parentId
 ) {
   const { createNode } = actions
 
@@ -51,12 +53,13 @@ function createFaqItemNode(
 
   createNode({
     id: createNodeId(`${data.game}-${data.question}-${data.answer}`),
-    parent: null,
+    parent: parentId,
     children: [],
     question: data.question,
     answer: data.answer,
     game: data.game,
     gameSlug: data.gameSlug,
+    discussion: data.discussion,
     slug: `${data.gameSlug}/${faqSlug}`,
     internal: {
       type: `FaqItem`,
@@ -105,7 +108,7 @@ exports.createPages = ({
         `
       ).then(result => {
         if (result.errors) {
-          reject(result.errors)
+          return reject(result.errors)
         }
 
         const gamePageTemplate = path.resolve(`src/templates/game-page.js`)

@@ -2,8 +2,11 @@
   name: Castles of Burgundy
   faqs: [
     {
-      question: This is a question?
-      answer: This is an answer.
+      question: Do you collect silver at the end of the game?
+      answer: Yes, the mines produce at the end of round 5.
+      discussion: [
+        https://boardgamegeek.com/thread/1586736/do-you-collect-silver-end-game
+      ]
     }
   ]
 }
