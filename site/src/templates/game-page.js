@@ -1,14 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import FAQItem from 'components/faq-item'
+
 import generateSlug from 'utils/generate-slug'
+import FAQItem from 'components/faq-item'
 import Layout from 'components/layout'
+import Breadcrumbs from 'components/breadcrumbs'
 
 const GamePage = ({ data }) => {
   const game = data.gamesHJson
 
   return (
     <Layout>
+      <Breadcrumbs />
       <h1>{game.name}</h1>
       <p>{game.description}</p>
       {game.faqs.map(faq => {

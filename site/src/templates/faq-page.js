@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import Link from 'components/link'
 import Layout from 'components/layout'
+import Breadcrumbs from 'components/breadcrumbs'
 
 import styles from './faq-page.module.scss'
 
@@ -11,9 +12,7 @@ const FAQPage = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Link to={faq.gameSlug} className={styles.gameLink}>
-        ← {faq.game}
-      </Link>
+      <Breadcrumbs faq={faq} />
       <h1>{faq.question}</h1>
       <p>{faq.answer}</p>
     </Layout>
