@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Index } from 'elasticlunr'
 import Link from 'components/link'
 
+import styles from './search.module.scss'
+
 type SearchProps = {
   searchIndex: any
 }
@@ -30,18 +32,34 @@ export default class Search extends Component<SearchProps, SearchState> {
 
   render() {
     return (
-      <div>
-        <input type="text" value={this.state.query} onChange={this.search} />
-        <ul>
+      <div className={styles.searchContainer}>
+        <input
+          type="text"
+          value={this.state.query}
+          onChange={this.search}
+          className={styles.searchInput}
+        />
+        <ol className={styles.searchResultsBox}>
           {this.state.results.map(page => (
             <li key={page.id}>
-              <Link to={'/' + page.path}>{page.title}</Link>
+              <Link
+                to={'/' + page.path}
+                className={styles.searchResultLink}
+                onClick={this.handleSearchResultClick.bind(this)}
+              >
+                {page.title}
+              </Link>
             </li>
           ))}
-        </ul>
+        </ol>
       </div>
     )
   }
+
+  handleSearchResultClick() {
+    this.setState({ results: [] })
+  }
+
   getOrCreateIndex = () =>
     this.index ? this.index : Index.load(this.props.searchIndex)
 

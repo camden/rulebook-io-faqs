@@ -21,7 +21,7 @@ module.exports = {
         resolvers: {
           GamesHJson: {
             title: node => node.name,
-            path: node => node.slug,
+            path: node => node.fields.slug,
           },
           FaqItem: {
             title: node => node.question,

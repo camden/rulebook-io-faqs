@@ -8,8 +8,8 @@ const FAQPage = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <h1>{faq.game}</h1>
-      <h2>{faq.question}</h2>
+      <h2>{faq.game}</h2>
+      <h1>{faq.question}</h1>
       <p>{faq.answer}</p>
     </Layout>
   )

@@ -4,7 +4,9 @@ import { Link as GatsbyLink } from 'gatsby'
 import styles from './link.module.scss'
 
 const Link = props => {
-  return <GatsbyLink {...props} className={styles.link} />
+  let classNamesMerged = `${styles.link} ${props.className}`
+
+  return <GatsbyLink {...props} className={classNamesMerged} />
 }
 
 export default Link
