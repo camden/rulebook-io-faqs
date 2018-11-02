@@ -14,7 +14,7 @@ exports.onCreateNode = props => {
   const { node, getNode, actions, createContentDigest, createNodeId } = props
   const { createNodeField } = actions
 
-  if (node.internal.type === `FaqsHJson`) {
+  if (node.internal.type === `GamesHJson`) {
     const fileNode = getNode(node.parent)
     const slug = createFilePath({
       node,
@@ -28,6 +28,7 @@ exports.onCreateNode = props => {
         props,
         Object.assign({}, faq, {
           game: node.name,
+          gameSlug: slug,
         })
       )
     })
@@ -47,12 +48,13 @@ function createFaqItemNode(
   const { createNode } = actions
 
   createNode({
-    id: createNodeId(`${data.game}-${data.question}`),
+    id: createNodeId(`${data.game}-${data.question}-${data.answer}`),
     parent: null,
     children: [],
     question: data.question,
     answer: data.answer,
     game: data.game,
+    gameSlug: data.gameSlug,
     internal: {
       type: `FaqItem`,
       content: JSON.stringify(data),
@@ -74,7 +76,7 @@ exports.createPages = ({
       graphql(
         `
           {
-            allFaqsHJson {
+            allGamesHJson {
               edges {
                 node {
                   faqs {
@@ -84,6 +86,16 @@ exports.createPages = ({
                   fields {
                     slug
                   }
+                }
+              }
+            }
+            allFaqItem {
+              edges {
+                node {
+                  question
+                  answer
+                  game
+                  gameSlug
                 }
               }
             }
@@ -97,7 +109,12 @@ exports.createPages = ({
         const gamePageTemplate = path.resolve(`src/templates/game-page.js`)
         const faqPageTemplate = path.resolve(`src/templates/faq-page.js`)
 
-        result.data.allFaqsHJson.edges.forEach(({ node }) => {
+        console.log(result)
+        const { allGamesHJson, allFaqItem } = result.data
+        const games = allGamesHJson.edges
+        const faqs = allFaqItem.edges
+
+        games.forEach(({ node }) => {
           const slug = node.fields.slug
           createPage({
             path: slug,
@@ -106,17 +123,16 @@ exports.createPages = ({
               slug,
             },
           })
+        })
 
-          node.faqs.forEach(faq => {
-            const faqSlug = generateSlug(faq)
-            createPage({
-              path: `${slug}/${faqSlug}`,
-              component: faqPageTemplate,
-              context: {
-                slug,
-                faq,
-              },
-            })
+        faqs.forEach(({ node: faq }) => {
+          const faqSlug = generateSlug(faq)
+          createPage({
+            path: `${faq.gameSlug}/${faqSlug}`,
+            component: faqPageTemplate,
+            context: {
+              faq,
+            },
           })
         })
       })

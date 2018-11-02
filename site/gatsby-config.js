@@ -19,7 +19,7 @@ module.exports = {
       options: {
         fields: ['title'],
         resolvers: {
-          FaqsHJson: {
+          GamesHJson: {
             title: node => node.name,
           },
         },

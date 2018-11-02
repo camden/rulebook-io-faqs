@@ -6,7 +6,7 @@ import Link from 'components/link'
 const IndexPage = ({ data }) => (
   <Layout>
     <h2>FAQs:</h2>
-    {data.allFaqsHJson.edges.map(({ node }) => {
+    {data.allGamesHJson.edges.map(({ node }) => {
       return (
         <div key={node.id}>
           <Link to={node.fields.slug}>{node.name}</Link>
@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
   query {
-    allFaqsHJson {
+    allGamesHJson {
       edges {
         node {
           name

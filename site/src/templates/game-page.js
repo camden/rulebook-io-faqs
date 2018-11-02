@@ -5,7 +5,7 @@ import generateSlug from 'utils/generate-slug'
 import Layout from 'components/layout'
 
 const GamePage = ({ data }) => {
-  const game = data.faqsHJson
+  const game = data.gamesHJson
 
   return (
     <Layout>
@@ -26,7 +26,7 @@ const GamePage = ({ data }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    faqsHJson(fields: { slug: { eq: $slug } }) {
+    gamesHJson(fields: { slug: { eq: $slug } }) {
       name
       description
       fields {
