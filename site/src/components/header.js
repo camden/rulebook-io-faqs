@@ -1,5 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+
 import Link from 'components/link'
 import Search from 'components/search'
 
@@ -12,16 +13,18 @@ const Header = ({ siteTitle }) => {
         <Link to="/">{siteTitle}</Link>
       </div>
 
-      <StaticQuery
-        query={graphql`
-          query SearchIndexQuery {
-            siteSearchIndex {
-              index
+      <div className={styles.search}>
+        <StaticQuery
+          query={graphql`
+            query SearchIndexQuery {
+              siteSearchIndex {
+                index
+              }
             }
-          }
-        `}
-        render={data => <Search searchIndex={data.siteSearchIndex.index} />}
-      />
+          `}
+          render={data => <Search searchIndex={data.siteSearchIndex.index} />}
+        />
+      </div>
     </header>
   )
 }

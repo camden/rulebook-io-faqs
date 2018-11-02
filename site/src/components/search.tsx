@@ -73,6 +73,7 @@ export default class Search extends Component<SearchProps, SearchState> {
           onFocus={this.handleFocus}
           className={styles.searchInput}
           ref={this.searchRef}
+          placeholder={'Search...'}
         />
         <ol className={styles.searchResultsBox} ref={this.searchResultsRef}>
           {this.state.results.map(page => (
