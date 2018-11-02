@@ -21,6 +21,8 @@ type SearchState = {
 
 export default class Search extends Component<SearchProps, SearchState> {
   index: any
+  searchRef: any
+  searchResultsRef: any
 
   constructor(props) {
     super(props)
@@ -28,6 +30,36 @@ export default class Search extends Component<SearchProps, SearchState> {
       query: ``,
       results: [],
     }
+
+    this.searchRef = React.createRef()
+    this.searchResultsRef = React.createRef()
+    this.handleSearchResultClick = this.handleSearchResultClick.bind(this)
+    this.handleDocumentClick = this.handleDocumentClick.bind(this)
+  }
+
+  componentWillMount() {
+    document.addEventListener('mousedown', this.handleDocumentClick, false)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleDocumentClick, false)
+  }
+
+  handleDocumentClick(e) {
+    const mouseNotInSearch = !(
+      this.searchRef.current.contains(e.target) ||
+      this.searchResultsRef.current.contains(e.target)
+    )
+
+    if (mouseNotInSearch) {
+      this.setState({
+        results: [],
+      })
+    }
+  }
+
+  handleFocus(e) {
+    e.target.select()
   }
 
   render() {
@@ -37,15 +69,18 @@ export default class Search extends Component<SearchProps, SearchState> {
           type="text"
           value={this.state.query}
           onChange={this.search}
+          onClick={this.search}
+          onFocus={this.handleFocus}
           className={styles.searchInput}
+          ref={this.searchRef}
         />
-        <ol className={styles.searchResultsBox}>
+        <ol className={styles.searchResultsBox} ref={this.searchResultsRef}>
           {this.state.results.map(page => (
             <li key={page.id}>
               <Link
                 to={'/' + page.path}
                 className={styles.searchResultLink}
-                onClick={this.handleSearchResultClick.bind(this)}
+                onClick={this.handleSearchResultClick}
               >
                 {page.title}
               </Link>
