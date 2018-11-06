@@ -6,7 +6,7 @@ import styles from './menu-item.module.scss'
 
 const MenuItem = ({ name, to }) => {
   return (
-    <div className={styles.container}>
+    <div>
       <Link to={to} className={styles.text}>
         {name}
       </Link>

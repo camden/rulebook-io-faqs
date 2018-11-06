@@ -20,8 +20,14 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 
+$padding-vertical: 40px;
+
 .children {
   max-width: 900px;
   margin: 0 auto;
-  padding: 30px $padding-global-horizontal;
+  padding: $padding-vertical $padding-horizontal-small;
+
+  @media (min-width: $breakpoint-small) {
+    padding: $padding-vertical $padding-horizontal-large;
+  }
 }

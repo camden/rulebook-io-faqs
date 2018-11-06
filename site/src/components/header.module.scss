@@ -1,17 +1,23 @@
 @import 'styles/variables';
 
+$padding-vertical: 0.8rem;
+
 .container {
   background-color: #fff;
   border-bottom: 1px solid $color-border;
-  padding: 0.8rem $padding-global-horizontal;
   display: grid;
-  grid-template-areas: 'title menu-items search';
-  @media (max-width: $breakpoint-small) {
-    grid-row-gap: 10px;
-    grid-template-areas:
-      'title'
-      'menu-items'
-      'search';
+  padding: $padding-vertical $padding-horizontal-small;
+  grid-row-gap: 10px;
+  grid-template-areas:
+    'title'
+    'menu-items'
+    'search';
+
+  @media (min-width: $breakpoint-small) {
+    padding: $padding-vertical $padding-horizontal-large;
+    grid-row-gap: 0;
+    grid-column-gap: 40px;
+    grid-template-areas: 'title menu-items search';
   }
 }
 
