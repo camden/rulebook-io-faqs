@@ -1,19 +1,25 @@
 @import 'styles/colors';
+@import 'styles/breakpoints';
 
 .container {
   background-color: $primary;
   padding: 0.6rem;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-areas: 'title . . search';
+  @media (max-width: $breakpoint-small) {
+    grid-template-areas:
+      'title'
+      'search';
+  }
 }
 
 .title {
-  flex: 1;
+  grid-area: title;
   font-weight: bold;
 }
 
 .search {
-  flex: 1;
+  grid-area: search;
   display: flex;
   justify-content: flex-end;
 }
