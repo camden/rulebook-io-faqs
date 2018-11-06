@@ -1,0 +1,20 @@
+{
+  name: Hive
+  description: Hive is a highly addictive strategic game for two players that is not restricted by a board and can be played anywhere on any flat surface. Hive is made up of twenty two pieces, eleven black and eleven white, resembling a variety of creatures each with a unique way of moving.
+  faqs: [
+    {
+      question: Can your beetle hop onto another beetle?
+      answer: Yes, you can stack beetles as high as you want to.
+      discussion: [
+        https://www.reddit.com/r/boardgames/comments/84ircy/hive_a_couple_of_rule_questions/
+      ]
+    }
+    {
+      question: Can a grasshopper jump over a tile with a beetle on top of it?
+      answer: Yes, the grasshopper ignores all the tiles it jumps over and falls into the first empty hole.
+      discussion: [
+        https://www.reddit.com/r/boardgames/comments/84ircy/hive_a_couple_of_rule_questions/
+      ]
+    }
+  ]
+}

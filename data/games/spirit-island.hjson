@@ -3,12 +3,25 @@
   description: Spirit Island is a complex and thematic cooperative game about defending your island home from colonizing Invaders. Players are different spirits of the land, each with its own unique elemental powers. Every turn, players simultaneously choose which of their power cards to play, paying energy to do so. Using combinations of power cards that match a spirit's elemental affinities can grant free bonus effects. Faster powers take effect immediately, before the Invaders spread and ravage, but other magics are slower, requiring forethought and planning to use effectively. In the Spirit phase, spirits gain energy, and choose how / whether to Grow: to reclaim used power cards, to seek for new power, or to spread presence into new areas of the island.
   faqs: [
     {
-      question: This is a question?
-      answer: This is an answer.
+      question: Does the game end if all of the Dahan are killed?
+      answer: No, the game ends only when there are no blights left on the blight card, when the last invader card is drawn, or when any spirit loses all of its presence.
+      discussion: [
+        https://www.reddit.com/r/boardgames/comments/81rctc/spirit_island_question_lose_conditions/
+      ]
     }
     {
-      question: How do you do the thing?
-      answer: You do it like this.
+      question: When a blight cascades, if all adjacent lands have blight, do you cascade again?
+      answer: Yes, the cascade continues if the chosen adjacent land also has blight. Remember that blight cascades to only one adjacent land.
+      discussion: [
+        https://www.reddit.com/r/boardgames/comments/843skr/spirit_island_blight_cascade_effect_question/
+      ]
+    }
+    {
+      question: If I play a power card that has an additional effect, does that card count itself in the check for the elemental threshold?
+      answer: Yes. This makes more sense if you make sure to look at the power choosing and energy paying part of the growth phase as distinctly separate from the fast powers phase. When you reach the powers phase you see "I have 4 mountains total, therefore I can use this effect that needs 4 mountains."
+      discussion: [
+        https://www.reddit.com/r/boardgames/comments/83l0fy/spirit_island_question/
+      ]
     }
   ]
 }
