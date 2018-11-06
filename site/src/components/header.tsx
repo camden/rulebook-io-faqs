@@ -1,17 +1,23 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Link from 'components/link'
 import Search from 'components/search'
+import Logo from 'components/logo'
+import MenuItem from 'components/menu-item'
 
 import styles from './header.module.scss'
-import Logo from 'components/logo'
 
 const Header = ({ siteTitle }) => {
   return (
     <header className={styles.container}>
       <div className={styles.title}>
         <Logo title={siteTitle} />
+      </div>
+
+      <div className={styles.menuItems}>
+        <MenuItem name="Help" to="/" />
+        <MenuItem name="Add a FAQ" to="/" />
+        <MenuItem name="About" to="/" />
       </div>
 
       <div className={styles.search}>

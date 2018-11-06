@@ -5,17 +5,28 @@
   border-bottom: 1px solid $color-border;
   padding: 0.8rem $padding-global-horizontal;
   display: grid;
-  grid-template-areas: 'title . . search';
+  grid-template-areas: 'title menu-items search';
   @media (max-width: $breakpoint-small) {
     grid-row-gap: 10px;
     grid-template-areas:
       'title'
+      'menu-items'
       'search';
   }
 }
 
 .title {
   grid-area: title;
+}
+
+.menu-items {
+  grid-area: menu-items;
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-items div:not(:last-child) {
+  margin-right: 60px;
 }
 
 .search {
