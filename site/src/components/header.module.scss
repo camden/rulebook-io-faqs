@@ -2,7 +2,8 @@
 @import 'styles/breakpoints';
 
 .container {
-  background-color: $primary;
+  background-color: #fff;
+  border-bottom: 1px solid $color-border;
   padding: 0.6rem;
   display: grid;
   grid-template-areas: 'title . . search';
@@ -15,7 +16,6 @@
 
 .title {
   grid-area: title;
-  font-weight: bold;
 }
 
 .search {

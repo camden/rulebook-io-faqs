@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { StatelessComponent } from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 
 import styles from './link.module.scss'
 
-const Link = props => {
+type LinkProps = {
+  className?: string
+  to: string
+}
+
+const Link: StatelessComponent<LinkProps> = props => {
   let classNamesMerged = `${styles.link} ${props.className}`
 
   return <GatsbyLink {...props} className={classNamesMerged} />

@@ -5,12 +5,13 @@ import Link from 'components/link'
 import Search from 'components/search'
 
 import styles from './header.module.scss'
+import Logo from 'components/logo'
 
 const Header = ({ siteTitle }) => {
   return (
     <header className={styles.container}>
       <div className={styles.title}>
-        <Link to="/">{siteTitle}</Link>
+        <Logo title={siteTitle} />
       </div>
 
       <div className={styles.search}>
