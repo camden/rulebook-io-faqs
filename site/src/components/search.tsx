@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { navigate } from 'gatsby'
 import { Index } from 'elasticlunr'
 import Link from 'components/link'
 
@@ -35,6 +36,7 @@ export default class Search extends Component<SearchProps, SearchState> {
     this.searchResultsRef = React.createRef()
     this.handleSearchResultClick = this.handleSearchResultClick.bind(this)
     this.handleDocumentClick = this.handleDocumentClick.bind(this)
+    this.handleKeyPress = this.handleKeyPress.bind(this)
   }
 
   componentWillMount() {
@@ -62,6 +64,16 @@ export default class Search extends Component<SearchProps, SearchState> {
     e.target.select()
   }
 
+  handleSearchResultClick() {
+    this.setState({ results: [] })
+  }
+
+  handleKeyPress(e) {
+    if (e.key === 'Enter' && this.state.results.length > 0) {
+      navigate(this.state.results[0].path)
+    }
+  }
+
   render() {
     return (
       <div className={styles.searchContainer}>
@@ -70,6 +82,7 @@ export default class Search extends Component<SearchProps, SearchState> {
           value={this.state.query}
           onChange={this.search}
           onClick={this.search}
+          onKeyPress={this.handleKeyPress}
           onFocus={this.handleFocus}
           className={styles.searchInput}
           ref={this.searchRef}
@@ -90,10 +103,6 @@ export default class Search extends Component<SearchProps, SearchState> {
         </ol>
       </div>
     )
-  }
-
-  handleSearchResultClick() {
-    this.setState({ results: [] })
   }
 
   getOrCreateIndex = () =>
