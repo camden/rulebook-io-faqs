@@ -21,6 +21,11 @@ const Layout = ({ children }) => (
       <>
         <Helmet title={data.site.siteMetadata.title}>
           <html lang="en" />
+          <meta
+            id="vp"
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+          />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className={styles.children}>{children}</div>
