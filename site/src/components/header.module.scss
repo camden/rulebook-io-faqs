@@ -1,10 +1,9 @@
-@import 'styles/colors';
-@import 'styles/breakpoints';
+@import 'styles/variables';
 
 .container {
   background-color: #fff;
   border-bottom: 1px solid $color-border;
-  padding: 0.6rem;
+  padding: 0.8rem $padding-global-horizontal;
   display: grid;
   grid-template-areas: 'title . . search';
   @media (max-width: $breakpoint-small) {
