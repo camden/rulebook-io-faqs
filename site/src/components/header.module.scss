@@ -7,6 +7,7 @@
   display: grid;
   grid-template-areas: 'title . . search';
   @media (max-width: $breakpoint-small) {
+    grid-row-gap: 10px;
     grid-template-areas:
       'title'
       'search';
