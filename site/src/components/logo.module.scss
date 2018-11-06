@@ -1,6 +1,11 @@
 .title {
-  font-weight: bold;
   display: flex;
   align-items: center;
   height: 100%;
+}
+
+.text {
+  font-weight: bold;
+  font-size: 26px;
+  font-family: 'Nunito Sans';
 }

@@ -7,7 +7,9 @@ import styles from './logo.module.scss'
 const Logo = ({ title }) => {
   return (
     <div className={styles.title}>
-      <Link to="/">{title}</Link>
+      <Link to="/" className={styles.text}>
+        {title}
+      </Link>
     </div>
   )
 }
