@@ -1,7 +1,14 @@
+@import 'styles/variables';
+
 .text {
   display: flex;
   align-items: center;
   height: 100%;
   font-weight: bold;
   font-family: 'Nunito Sans';
+  font-size: $text-header-small;
+
+  @media (min-width: $breakpoint-small) {
+    font-size: $text-header-normal;
+  }
 }

@@ -8,8 +8,12 @@
 
 .text {
   font-weight: bold;
-  font-size: 26px;
+  font-size: $text-header-small;
   font-family: 'Nunito Sans';
+
+  @media (min-width: $breakpoint-small) {
+    font-size: $text-header-normal;
+  }
 }
 
 .emphasis {

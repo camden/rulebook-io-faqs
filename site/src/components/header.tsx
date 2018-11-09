@@ -14,12 +14,6 @@ const Header = ({ siteTitle }) => {
         <Logo title={siteTitle} />
       </div>
 
-      <div className={styles.menuItems}>
-        <MenuItem name="Help" to="/" />
-        <MenuItem name="Add a FAQ" to="/" />
-        <MenuItem name="About" to="/" />
-      </div>
-
       <div className={styles.search}>
         <StaticQuery
           query={graphql`
@@ -31,6 +25,10 @@ const Header = ({ siteTitle }) => {
           `}
           render={data => <Search searchIndex={data.siteSearchIndex.index} />}
         />
+      </div>
+
+      <div className={styles.menuItems}>
+        <MenuItem name="Add a FAQ" to="/" />
       </div>
     </header>
   )
