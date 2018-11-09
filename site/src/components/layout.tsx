@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
+import Header from 'components/header'
+import Footer from 'components/footer'
+
 import styles from './layout.module.scss'
 
 const Layout = ({ children }) => (
@@ -18,7 +20,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <div className={styles.container}>
         <Helmet title={data.site.siteMetadata.title}>
           <html lang="en" />
           <meta
@@ -27,9 +29,14 @@ const Layout = ({ children }) => (
             content="width=device-width, initial-scale=1"
           />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <div className={styles.header}>
+          <Header siteTitle={data.site.siteMetadata.title} />
+        </div>
         <div className={styles.children}>{children}</div>
-      </>
+        <div className={styles.footer}>
+          <Footer />
+        </div>
+      </div>
     )}
   />
 )

@@ -4,6 +4,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
+  height: 100%;
 }
 
 *:after,
@@ -14,16 +15,28 @@ html {
 
 body {
   margin: 0;
+  height: 100vh;
 }
 
 a {
   -webkit-text-decoration-skip: objects;
 }
 
+.container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: min-content 3fr auto;
+}
+
+.footer {
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
 $padding-vertical: 40px;
 
 .children {
-  max-width: 900px;
+  max-width: $content-max-width;
   margin: 0 auto;
   padding: $padding-vertical $padding-horizontal-small;
 

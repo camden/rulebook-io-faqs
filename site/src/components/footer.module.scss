@@ -1,0 +1,20 @@
+@import 'styles/variables';
+
+.container {
+  border-top: 1px solid $color-border;
+  min-height: 3em;
+}
+
+$padding-vertical: 40px;
+
+.content {
+  margin: 0 auto;
+  max-width: $content-max-width;
+  padding: $padding-vertical $padding-horizontal-small;
+
+  @media (min-width: $breakpoint-small) {
+    padding: $padding-vertical $padding-horizontal-large;
+  }
+
+  font-style: oblique;
+}
