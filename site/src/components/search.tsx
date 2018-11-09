@@ -76,7 +76,6 @@ export default class Search extends Component<SearchProps, SearchState> {
   }
 
   render() {
-    console.log(this.state.results)
     return (
       <div className={styles.searchContainer}>
         <input
