@@ -5,12 +5,29 @@
   width: 100%;
 }
 
+.searchInputContainer {
+  display: flex;
+  border-bottom: 1px solid $color-border;
+}
+
 .searchInput {
   border: 0;
-  border-bottom: 1px solid $color-border;
   border-radius: 0;
   padding: 10px 15px 5px;
   width: 100%;
+}
+
+.searchIcon {
+  color: $color-text-secondary;
+  font-size: 0.9em;
+  margin-left: 10px;
+  position: relative;
+  top: 2px;
+  align-self: center;
+}
+
+.searchIcon svg {
+  vertical-align: middle;
 }
 
 .searchInput::placeholder {

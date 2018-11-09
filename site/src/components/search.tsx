@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { navigate } from 'gatsby'
 import { Index } from 'elasticlunr'
+import { FaSearch } from 'react-icons/fa'
+
 import SearchResult from 'components/search-result'
 
 import styles from './search.module.scss'
@@ -78,17 +80,23 @@ export default class Search extends Component<SearchProps, SearchState> {
   render() {
     return (
       <div className={styles.searchContainer}>
-        <input
-          type="text"
-          value={this.state.query}
-          onChange={this.search}
-          onClick={this.search}
-          onKeyPress={this.handleKeyPress}
-          onFocus={this.handleFocus}
-          className={styles.searchInput}
-          ref={this.searchRef}
-          placeholder={'Find games, questions, answers...'}
-        />
+        <div className={styles.searchInputContainer}>
+          <label className={styles.searchIcon} htmlFor="search-input">
+            <FaSearch />
+          </label>
+          <input
+            id="search-input"
+            type="text"
+            value={this.state.query}
+            onChange={this.search}
+            onClick={this.search}
+            onKeyPress={this.handleKeyPress}
+            onFocus={this.handleFocus}
+            className={styles.searchInput}
+            ref={this.searchRef}
+            placeholder={'Find games, questions, answers...'}
+          />
+        </div>
         <ol className={styles.searchResultsBox} ref={this.searchResultsRef}>
           {this.state.results.map(page => (
             <li key={page.id}>
