@@ -43,11 +43,13 @@ export default class Search extends Component<SearchProps, SearchState> {
   }
 
   componentWillMount() {
-    document.addEventListener('mousedown', this.handleDocumentClick, false)
+    document &&
+      document.addEventListener('mousedown', this.handleDocumentClick, false)
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleDocumentClick, false)
+    document &&
+      document.removeEventListener('mousedown', this.handleDocumentClick, false)
   }
 
   handleDocumentClick(e) {
