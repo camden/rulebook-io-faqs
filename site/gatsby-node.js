@@ -111,8 +111,8 @@ exports.createPages = ({
           return reject(result.errors)
         }
 
-        const gamePageTemplate = path.resolve(`src/templates/game-page.js`)
-        const faqPageTemplate = path.resolve(`src/templates/faq-page.js`)
+        const gamePageTemplate = path.resolve(`src/templates/game-page.tsx`)
+        const faqPageTemplate = path.resolve(`src/templates/faq-page.tsx`)
 
         const { allGamesHJson, allFaqItem } = result.data
         const games = allGamesHJson.edges

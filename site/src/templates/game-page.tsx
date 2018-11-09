@@ -13,7 +13,14 @@ const GamePage = ({ data }) => {
 
   return (
     <Layout>
-      <Breadcrumbs />
+      <Breadcrumbs
+        path={[
+          {
+            title: game.name,
+            link: game.fields.slug,
+          },
+        ]}
+      />
       <h1>{game.name}</h1>
       <p className={styles.description}>{game.description}</p>
       {game.faqs.map(faq => {

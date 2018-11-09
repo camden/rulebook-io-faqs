@@ -11,9 +11,20 @@ import styles from './faq-page.module.scss'
 const FAQPage = ({ data, pageContext }) => {
   const faq = data.faqItem
 
+  console.log(faq)
   return (
     <Layout>
-      <Breadcrumbs faq={faq} />
+      <Breadcrumbs
+        path={[
+          {
+            title: faq.game,
+            link: faq.gameSlug,
+          },
+          {
+            title: faq.question,
+          },
+        ]}
+      />
       <h1>{faq.question}</h1>
       <p>{faq.answer}</p>
       <p>

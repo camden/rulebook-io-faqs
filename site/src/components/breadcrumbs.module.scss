@@ -1,8 +1,9 @@
 .breadcrumbs {
   display: block;
   margin-bottom: 15px;
+  font-style: italic;
 }
 
-.breadcrumbLink:not(:first-child) {
-  margin-left: 10px;
+.separator {
+  margin: 0 10px;
 }
