@@ -5,7 +5,7 @@ const typography = new Typography({
   baseLineHeight: 1.5,
   headerFontFamily: ['Nunito Sans', 'sans-serif'],
   bodyFontFamily: ['Lora', 'Georgia', 'serif'],
-  scaleRatio: 2.5,
+  scaleRatio: 2.35,
   googleFonts: [
     {
       name: 'Nunito Sans',
