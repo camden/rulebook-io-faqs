@@ -24,17 +24,31 @@ const Breadcrumbs: SFC<BreadcrumbsProps> = props => {
             <span className={styles.separator}>›</span>
             {breadcrumbItem.link ? (
               <Link to={breadcrumbItem.link} className={styles.breadcrumbLink}>
-                {breadcrumbItem.title}
+                {truncateTitle(breadcrumbItem.title)}
               </Link>
             ) : (
               <span className={styles.breadcrumbLink}>
-                {breadcrumbItem.title}
+                {truncateTitle(breadcrumbItem.title)}
               </span>
             )}
           </span>
         ))}
     </small>
   )
+}
+
+const truncateTitle = title => {
+  const WORD_LIMIT = 10
+  const smallerTitle = title
+    .split(' ')
+    .slice(0, WORD_LIMIT)
+    .join(' ')
+
+  if (smallerTitle === title) {
+    return title
+  } else {
+    return smallerTitle + '...'
+  }
 }
 
 export default Breadcrumbs
