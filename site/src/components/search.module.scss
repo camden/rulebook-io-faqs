@@ -13,6 +13,10 @@
   width: 100%;
 }
 
+.searchInput::placeholder {
+  line-height: 1.4;
+}
+
 .searchResultsBox {
   position: absolute;
   background-color: white;
