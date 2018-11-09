@@ -8,6 +8,7 @@ $padding-vertical: 0.8rem;
   display: grid;
   padding: $padding-vertical $padding-horizontal-small;
   grid-row-gap: 10px;
+  grid-template-columns: 2fr 2fr 3fr;
   grid-template-areas:
     'title'
     'menu-items'

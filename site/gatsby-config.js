@@ -28,6 +28,7 @@ module.exports = {
             question: node => node.question,
             answer: node => node.answer,
             path: node => node.slug,
+            game: node => node.game,
           },
         },
       },

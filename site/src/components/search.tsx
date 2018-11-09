@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { navigate } from 'gatsby'
 import { Index } from 'elasticlunr'
-import Link from 'components/link'
+import SearchResult from 'components/search-result'
 
 import styles from './search.module.scss'
 
@@ -16,6 +16,7 @@ type SearchState = {
       id: string
       title: string
       path: string
+      game: string
     }?
   ]
 }
@@ -91,13 +92,12 @@ export default class Search extends Component<SearchProps, SearchState> {
         <ol className={styles.searchResultsBox} ref={this.searchResultsRef}>
           {this.state.results.map(page => (
             <li key={page.id}>
-              <Link
-                to={'/' + page.path}
-                className={styles.searchResultLink}
+              <SearchResult
+                linkTo={'/' + page.path}
                 onClick={this.handleSearchResultClick}
-              >
-                {page.title}
-              </Link>
+                title={page.title}
+                gameTitle={page.game}
+              />
             </li>
           ))}
         </ol>

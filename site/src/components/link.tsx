@@ -4,6 +4,7 @@ import { Link as GatsbyLink } from 'gatsby'
 import styles from './link.module.scss'
 
 type LinkProps = {
+  onClick?: () => void
   className?: string
   to: string
 }
