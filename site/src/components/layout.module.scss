@@ -36,6 +36,7 @@ a {
 $padding-vertical: 40px;
 
 .children {
+  width: 100%;
   max-width: $content-max-width;
   margin: 0 auto;
   padding: $padding-vertical $padding-horizontal-small;
