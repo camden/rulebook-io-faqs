@@ -11,7 +11,6 @@ import styles from './faq-page.module.scss'
 const FAQPage = ({ data, pageContext }) => {
   const faq = data.faqItem
 
-  console.log(faq)
   return (
     <Layout>
       <Breadcrumbs
