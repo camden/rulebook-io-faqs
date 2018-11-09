@@ -6,13 +6,17 @@ import Link from 'components/link'
 import Layout from 'components/layout'
 import Breadcrumbs from 'components/breadcrumbs'
 
+import truncateTitle from 'utils/truncate-title'
+
 import styles from './faq-page.module.scss'
 
 const FAQPage = ({ data, pageContext }) => {
   const faq = data.faqItem
 
+  const title = truncateTitle(faq.question) + ' — ' + faq.game
+
   return (
-    <Layout>
+    <Layout title={title}>
       <Breadcrumbs
         path={[
           {

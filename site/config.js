@@ -1,3 +1,3 @@
 module.exports = {
-  slugLength: 20,
+  slugWordLength: 10,
 }

@@ -12,7 +12,7 @@ const GamePage = ({ data }) => {
   const game = data.gamesHJson
 
   return (
-    <Layout>
+    <Layout title={game.name}>
       <Breadcrumbs
         path={[
           {

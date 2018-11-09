@@ -4,5 +4,11 @@ const slug = require('slug')
 const config = require('../../config')
 
 module.exports = function(faq) {
-  return slug(faq.question.toLowerCase()).substring(0, config.slugLength)
+  return slug(
+    faq.question
+      .toLowerCase()
+      .split(' ')
+      .slice(0, config.slugWordLength)
+      .join(' ')
+  )
 }

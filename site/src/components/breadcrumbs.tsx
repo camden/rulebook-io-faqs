@@ -1,5 +1,7 @@
 import React, { SFC } from 'react'
+
 import Link from 'components/link'
+import truncateTitle from 'utils/truncate-title'
 
 import styles from './breadcrumbs.module.scss'
 
@@ -35,20 +37,6 @@ const Breadcrumbs: SFC<BreadcrumbsProps> = props => {
         ))}
     </small>
   )
-}
-
-const truncateTitle = title => {
-  const WORD_LIMIT = 10
-  const smallerTitle = title
-    .split(' ')
-    .slice(0, WORD_LIMIT)
-    .join(' ')
-
-  if (smallerTitle === title) {
-    return title
-  } else {
-    return smallerTitle + '...'
-  }
 }
 
 export default Breadcrumbs

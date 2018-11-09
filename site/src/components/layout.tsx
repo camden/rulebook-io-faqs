@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { SFC } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
@@ -8,7 +8,11 @@ import Footer from 'components/footer'
 
 import styles from './layout.module.scss'
 
-const Layout = ({ children }) => (
+type LayoutProps = {
+  title?: string
+}
+
+const Layout: SFC<LayoutProps> = ({ children, title }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -19,25 +23,34 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
-      <div className={styles.container}>
-        <Helmet title={data.site.siteMetadata.title}>
-          <html lang="en" />
-          <meta
-            id="vp"
-            name="viewport"
-            content="width=device-width, initial-scale=1"
-          />
-        </Helmet>
-        <div className={styles.header}>
-          <Header siteTitle={data.site.siteMetadata.title} />
+    render={data => {
+      const baseTitle = data.site.siteMetadata.title
+      let pageTitle = baseTitle
+
+      if (title) {
+        pageTitle = title + ' — ' + baseTitle
+      }
+
+      return (
+        <div className={styles.container}>
+          <Helmet title={pageTitle}>
+            <html lang="en" />
+            <meta
+              id="vp"
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+          </Helmet>
+          <div className={styles.header}>
+            <Header siteTitle={data.site.siteMetadata.title} />
+          </div>
+          <div className={styles.children}>{children}</div>
+          <div className={styles.footer}>
+            <Footer />
+          </div>
         </div>
-        <div className={styles.children}>{children}</div>
-        <div className={styles.footer}>
-          <Footer />
-        </div>
-      </div>
-    )}
+      )
+    }}
   />
 )
 
