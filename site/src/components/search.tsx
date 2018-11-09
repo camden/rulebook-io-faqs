@@ -76,6 +76,7 @@ export default class Search extends Component<SearchProps, SearchState> {
   }
 
   render() {
+    console.log(this.state.results)
     return (
       <div className={styles.searchContainer}>
         <input
@@ -87,13 +88,13 @@ export default class Search extends Component<SearchProps, SearchState> {
           onFocus={this.handleFocus}
           className={styles.searchInput}
           ref={this.searchRef}
-          placeholder={'Search...'}
+          placeholder={'Find games, questions, answers...'}
         />
         <ol className={styles.searchResultsBox} ref={this.searchResultsRef}>
           {this.state.results.map(page => (
             <li key={page.id}>
               <SearchResult
-                linkTo={'/' + page.path}
+                linkTo={page.path}
                 onClick={this.handleSearchResultClick}
                 title={page.title}
                 gameTitle={page.game}
