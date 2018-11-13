@@ -124,7 +124,7 @@ export default class Search extends Component<SearchProps, SearchState> {
     this.setState({
       query,
       results: this.index
-        .search(query, { expand: true })
+        .search(query, { expand: true, bool: 'AND' })
         .map(({ ref }) => this.index.documentStore.getDoc(ref)),
     })
   }
