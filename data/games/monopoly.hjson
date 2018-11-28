@@ -1,7 +1,6 @@
 {
   name: Monopoly
   description: Players take the part of land owners, attempting to buy and then develop their land. Income is gained by other players visiting their properties and money is spent when they visit properties belonging to other players. When times get tough, players may have to mortgage their properties to raise cash for fines, taxes and other misfortunes.
-  rulebook: monopoly
   faqs: [
     {
       question: Can I buy houses and hotels when it's not my turn?

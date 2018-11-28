@@ -1,6 +1,7 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const generateSlug = require('./src/utils/_generate-slug')
+const config = require('./config')
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
@@ -16,13 +17,13 @@ exports.onCreateNode = props => {
 
   if (node.internal.type === `GamesHJson`) {
     const fileNode = getNode(node.parent)
-    const slug =
-      'games' +
-      createFilePath({
-        node,
-        getNode,
-        trailingSlash: false,
-      })
+    const filePath = createFilePath({
+      node,
+      getNode,
+      trailingSlash: false,
+    })
+
+    const slug = filePath
 
     node.faqs.forEach(faq => {
       createFaqItemNode(
@@ -39,6 +40,15 @@ exports.onCreateNode = props => {
       node,
       name: `slug`,
       value: slug,
+    })
+
+    // remove the leading slash
+    const shortSlug = filePath.slice(1)
+
+    createNodeField({
+      node,
+      name: `shortSlug`,
+      value: shortSlug,
     })
   }
 }
@@ -156,11 +166,12 @@ exports.createPages = ({
         const markdownPages = allMarkdownRemark.edges
 
         markdownPages.forEach(({ node: rulebookPage }) => {
+          const gamePath = rulebookPage.frontmatter.gamePath
           createPage({
-            path: 'markdown-path',
+            path: gamePath + '/' + config.rulesSuffix,
             component: rulebookPageTemplate,
             context: {
-              gamePath: rulebookPage.frontmatter.gamePath,
+              gamePath: gamePath,
             },
           })
         })
