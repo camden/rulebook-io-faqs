@@ -7,7 +7,6 @@ import Layout from 'components/layout'
 import Breadcrumbs from 'components/breadcrumbs'
 
 const RulebookPage = ({ data }) => {
-  console.log(data)
   const game = data.gamesHJson
   return (
     <Layout>

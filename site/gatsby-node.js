@@ -23,7 +23,7 @@ exports.onCreateNode = props => {
       trailingSlash: false,
     })
 
-    const slug = filePath
+    const slug = '/' + config.gamesPrefix + filePath
 
     node.faqs.forEach(faq => {
       createFaqItemNode(
@@ -111,6 +111,7 @@ exports.createPages = ({
                   }
                   fields {
                     slug
+                    shortSlug
                   }
                 }
               }
@@ -142,11 +143,13 @@ exports.createPages = ({
 
         games.forEach(({ node }) => {
           const slug = node.fields.slug
+          const shortSlug = node.fields.shortSlug
+
           createPage({
             path: slug,
             component: gamePageTemplate,
             context: {
-              slug,
+              shortSlug,
             },
           })
         })
@@ -168,7 +171,8 @@ exports.createPages = ({
         markdownPages.forEach(({ node: rulebookPage }) => {
           const gamePath = rulebookPage.frontmatter.gamePath
           createPage({
-            path: gamePath + '/' + config.rulesSuffix,
+            path:
+              config.gamesPrefix + '/' + gamePath + '/' + config.rulesSuffix,
             component: rulebookPageTemplate,
             context: {
               gamePath: gamePath,

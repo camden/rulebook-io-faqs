@@ -5,11 +5,14 @@ import generateSlug from 'utils/generate-slug'
 import FAQItem from 'components/faq-item'
 import Layout from 'components/layout'
 import Breadcrumbs from 'components/breadcrumbs'
+import Link from 'components/link'
+import config from '../../config'
 
 import styles from './game-page.module.scss'
 
 const GamePage = ({ data }) => {
   const game = data.gamesHJson
+  const rulebook = data.markdownRemark
 
   return (
     <Layout title={game.name}>
@@ -22,6 +25,19 @@ const GamePage = ({ data }) => {
         ]}
       />
       <h1>{game.name}</h1>
+      <div className={styles.info}>
+        <div className={styles.infoItem}>
+          {rulebook ? (
+            <Link to={config.rulesSuffix}>{game.name} Rulebook</Link>
+          ) : null}
+        </div>
+        <div className={styles.infoItem}>
+          <Link to="/">BoardGameGeek Page</Link>
+        </div>
+        <div className={styles.infoItem}>
+          <Link to="/">Buy {game.name} on Amazon</Link>
+        </div>
+      </div>
       <p className={styles.description}>{game.description}</p>
       {game.faqs.map(faq => {
         const slug = `${game.fields.slug}/${generateSlug(faq)}`
@@ -37,8 +53,12 @@ const GamePage = ({ data }) => {
 }
 
 export const query = graphql`
-  query($slug: String!) {
-    gamesHJson(fields: { slug: { eq: $slug } }) {
+  query($shortSlug: String!) {
+    markdownRemark(frontmatter: { gamePath: { eq: $shortSlug } }) {
+      fileAbsolutePath
+    }
+
+    gamesHJson(fields: { shortSlug: { eq: $shortSlug } }) {
       name
       description
       fields {
