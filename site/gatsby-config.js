@@ -7,6 +7,7 @@ module.exports = {
   pathPrefix: `/rulebook-faqs`,
   plugins: [
     'gatsby-transformer-hjson',
+    'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-typescript`,
     {
@@ -18,8 +19,16 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `data`,
-        path: path.resolve(`/${__dirname}/../data/`),
+        name: `games`,
+        path: path.resolve(`/${__dirname}/../data/rulebooks`),
+        ignore: [`**/\.*`], // ignore files starting with a dot
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `rulebooks`,
+        path: path.resolve(`/${__dirname}/../data/games`),
         ignore: [`**/\.*`], // ignore files starting with a dot
       },
     },

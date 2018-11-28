@@ -16,12 +16,13 @@ exports.onCreateNode = props => {
 
   if (node.internal.type === `GamesHJson`) {
     const fileNode = getNode(node.parent)
-    const slug = createFilePath({
-      node,
-      getNode,
-      basePath: `faqs`,
-      trailingSlash: false,
-    })
+    const slug =
+      'games' +
+      createFilePath({
+        node,
+        getNode,
+        trailingSlash: false,
+      })
 
     node.faqs.forEach(faq => {
       createFaqItemNode(
@@ -82,6 +83,15 @@ exports.createPages = ({
       graphql(
         `
           {
+            allMarkdownRemark {
+              edges {
+                node {
+                  frontmatter {
+                    gamePath
+                  }
+                }
+              }
+            }
             allGamesHJson {
               edges {
                 node {
@@ -113,10 +123,12 @@ exports.createPages = ({
 
         const gamePageTemplate = path.resolve(`src/templates/game-page.tsx`)
         const faqPageTemplate = path.resolve(`src/templates/faq-page.tsx`)
+        const rulebookPageTemplate = path.resolve(
+          `src/templates/rulebook-page.tsx`
+        )
 
-        const { allGamesHJson, allFaqItem } = result.data
+        const { allGamesHJson, allFaqItem, allMarkdownRemark } = result.data
         const games = allGamesHJson.edges
-        const faqs = allFaqItem.edges
 
         games.forEach(({ node }) => {
           const slug = node.fields.slug
@@ -129,12 +141,26 @@ exports.createPages = ({
           })
         })
 
+        const faqs = allFaqItem.edges
+
         faqs.forEach(({ node: faq }) => {
           createPage({
             path: faq.slug,
             component: faqPageTemplate,
             context: {
               slug: faq.slug,
+            },
+          })
+        })
+
+        const markdownPages = allMarkdownRemark.edges
+
+        markdownPages.forEach(({ node: rulebookPage }) => {
+          createPage({
+            path: 'markdown-path',
+            component: rulebookPageTemplate,
+            context: {
+              gamePath: rulebookPage.frontmatter.gamePath,
             },
           })
         })
