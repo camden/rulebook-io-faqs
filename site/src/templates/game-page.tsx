@@ -26,11 +26,13 @@ const GamePage = ({ data }) => {
       />
       <h1>{game.name}</h1>
       <div className={styles.info}>
-        <div className={styles.infoItem}>
-          {rulebook ? (
-            <Link to={config.rulesSuffix}>{game.name} Rulebook</Link>
-          ) : null}
-        </div>
+        {rulebook ? (
+          <div className={styles.infoItem}>
+            <Link to={game.fields.slug + '/' + config.rulesSuffix}>
+              {game.name} Rulebook
+            </Link>
+          </div>
+        ) : null}
         <div className={styles.infoItem}>
           <Link to="/">BoardGameGeek Page</Link>
         </div>
