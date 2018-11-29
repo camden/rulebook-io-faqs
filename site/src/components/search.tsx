@@ -53,6 +53,10 @@ export default class Search extends Component<SearchProps, SearchState> {
   }
 
   handleDocumentClick(e) {
+    if (!this.searchRef.current || !this.searchResultsRef.current) {
+      return
+    }
+
     const mouseNotInSearch = !(
       this.searchRef.current.contains(e.target) ||
       this.searchResultsRef.current.contains(e.target)

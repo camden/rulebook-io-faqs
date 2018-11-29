@@ -34,10 +34,12 @@ const GamePage = ({ data }) => {
           </div>
         ) : null}
         <div className={styles.infoItem}>
-          <Link to="/">BoardGameGeek Page</Link>
+          <Link to="/">BoardGameGeek</Link>
         </div>
         <div className={styles.infoItem}>
-          <Link to="/">Buy {game.name} on Amazon</Link>
+          <Link to="https://amazon.com" openInNewTab={true}>
+            Buy {game.name} on Amazon
+          </Link>
         </div>
       </div>
       <p className={styles.description}>{game.description}</p>
