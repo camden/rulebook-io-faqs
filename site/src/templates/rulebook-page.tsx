@@ -21,6 +21,7 @@ const RulebookPage = ({ data }) => {
           },
         ]}
       />
+      <h1>{game.name} Rulebook</h1>
       <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
     </Layout>
   )
