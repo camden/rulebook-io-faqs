@@ -1,6 +1,5 @@
 ---
 title: Puerto Rico
-gamePath: puerto-rico
 source: https://www.orderofgamers.com/downloads/PuertoRico_v1.3.pdf
 tags:
   - economic

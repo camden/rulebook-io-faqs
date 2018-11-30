@@ -52,12 +52,12 @@ const RulebookPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query($gamePath: String!) {
-    markdownRemark(frontmatter: { gamePath: { eq: $gamePath } }) {
+  query($gameSlug: String!) {
+    markdownRemark(fields: { gameSlug: { eq: $gameSlug } }) {
       htmlAst
     }
 
-    gamesHJson(fields: { shortSlug: { eq: $gamePath } }) {
+    gamesHJson(fields: { shortSlug: { eq: $gameSlug } }) {
       name
       fields {
         slug

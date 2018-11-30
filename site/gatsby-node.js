@@ -15,6 +15,16 @@ exports.onCreateNode = props => {
   const { node, getNode, actions, createContentDigest, createNodeId } = props
   const { createNodeField } = actions
 
+  if (node.internal.type === `MarkdownRemark`) {
+    const parent = getNode(node.parent)
+
+    createNodeField({
+      node,
+      name: 'gameSlug',
+      value: parent.name,
+    })
+  }
+
   if (node.internal.type === `GamesHJson`) {
     const fileNode = getNode(node.parent)
     const filePath = createFilePath({
@@ -98,8 +108,8 @@ exports.createPages = ({
             allMarkdownRemark {
               edges {
                 node {
-                  frontmatter {
-                    gamePath
+                  fields {
+                    gameSlug
                   }
                 }
               }
@@ -171,13 +181,13 @@ exports.createPages = ({
         const markdownPages = allMarkdownRemark.edges
 
         markdownPages.forEach(({ node: rulebookPage }) => {
-          const gamePath = rulebookPage.frontmatter.gamePath
+          const gameSlug = rulebookPage.fields.gameSlug
           createPage({
             path:
-              config.gamesPrefix + '/' + gamePath + '/' + config.rulesSuffix,
+              config.gamesPrefix + '/' + gameSlug + '/' + config.rulesSuffix,
             component: rulebookPageTemplate,
             context: {
-              gamePath: gamePath,
+              gameSlug: gameSlug,
             },
           })
         })

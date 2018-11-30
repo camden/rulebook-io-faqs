@@ -1,6 +1,5 @@
 ---
 title: Monopoly
-gamePath: monopoly
 source: http://www.tmk.edu.ee/~creature/monopoly/download/official_rules_gathering/instructions.pdf
 tags:
   - classic
