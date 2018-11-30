@@ -1,6 +1,6 @@
 import React, { createElement } from 'react'
 import { graphql } from 'gatsby'
-import Markdown from 'react-markdown'
+import rehypeReact from 'rehype-react'
 
 import generateSlug from 'utils/generate-slug'
 import FAQItem from 'components/faq-item'
@@ -12,12 +12,26 @@ const HeadingButSmallerByOne = ({ level, children }) => {
   return createElement(`h${newLevel}`, null, children)
 }
 
-const rulebookMarkdownRenderers = {
-  heading: HeadingButSmallerByOne,
-}
+const generateHeading = level => ({ children }) => (
+  <HeadingButSmallerByOne level={level} children={children} />
+)
+
+const renderAst = new rehypeReact({
+  createElement,
+  components: {
+    h1: generateHeading(1),
+    h2: generateHeading(2),
+    h3: generateHeading(3),
+    h4: generateHeading(4),
+    h5: generateHeading(5),
+    h6: generateHeading(6),
+  },
+}).Compiler
 
 const RulebookPage = ({ data }) => {
   const game = data.gamesHJson
+  const htmlAst = data.markdownRemark.htmlAst
+  const renderedMarkdown = renderAst(htmlAst)
   return (
     <Layout>
       <Breadcrumbs
@@ -32,11 +46,7 @@ const RulebookPage = ({ data }) => {
         ]}
       />
       <h1>{game.name} Rulebook</h1>
-      <Markdown
-        source={data.markdownRemark.rawMarkdownBody}
-        escapeHtml={false}
-        renderers={rulebookMarkdownRenderers}
-      />
+      {renderedMarkdown}
     </Layout>
   )
 }
@@ -44,7 +54,7 @@ const RulebookPage = ({ data }) => {
 export const query = graphql`
   query($gamePath: String!) {
     markdownRemark(frontmatter: { gamePath: { eq: $gamePath } }) {
-      rawMarkdownBody
+      htmlAst
     }
 
     gamesHJson(fields: { shortSlug: { eq: $gamePath } }) {
