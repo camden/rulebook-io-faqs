@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { createElement } from 'react'
 import { graphql } from 'gatsby'
+import Markdown from 'react-markdown'
 
 import generateSlug from 'utils/generate-slug'
 import FAQItem from 'components/faq-item'
 import Layout from 'components/layout'
 import Breadcrumbs from 'components/breadcrumbs'
+
+const HeadingButSmallerByOne = ({ level, children }) => {
+  const newLevel = Math.min(6, level + 1)
+  return createElement(`h${newLevel}`, null, children)
+}
+
+const rulebookMarkdownRenderers = {
+  heading: HeadingButSmallerByOne,
+}
 
 const RulebookPage = ({ data }) => {
   const game = data.gamesHJson
@@ -22,7 +32,11 @@ const RulebookPage = ({ data }) => {
         ]}
       />
       <h1>{game.name} Rulebook</h1>
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+      <Markdown
+        source={data.markdownRemark.rawMarkdownBody}
+        escapeHtml={false}
+        renderers={rulebookMarkdownRenderers}
+      />
     </Layout>
   )
 }
@@ -30,7 +44,7 @@ const RulebookPage = ({ data }) => {
 export const query = graphql`
   query($gamePath: String!) {
     markdownRemark(frontmatter: { gamePath: { eq: $gamePath } }) {
-      html
+      rawMarkdownBody
     }
 
     gamesHJson(fields: { shortSlug: { eq: $gamePath } }) {
