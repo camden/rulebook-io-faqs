@@ -25,16 +25,18 @@ exports.onCreateNode = props => {
 
     const slug = '/' + config.gamesPrefix + filePath
 
-    node.faqs.forEach(faq => {
-      createFaqItemNode(
-        props,
-        Object.assign({}, faq, {
-          game: node.name,
-          gameSlug: slug,
-        }),
-        node.id
-      )
-    })
+    if (node.faqs) {
+      node.faqs.forEach(faq => {
+        createFaqItemNode(
+          props,
+          Object.assign({}, faq, {
+            game: node.name,
+            gameSlug: slug,
+          }),
+          node.id
+        )
+      })
+    }
 
     createNodeField({
       node,
