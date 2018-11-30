@@ -4,6 +4,7 @@ import rehypeReact from 'rehype-react'
 
 import Layout from 'components/layout'
 import Breadcrumbs from 'components/breadcrumbs'
+import Link from 'components/link'
 
 const HeadingButSmallerByOne = ({ level, children }) => {
   const newLevel = Math.min(6, level + 1)
@@ -23,6 +24,7 @@ const renderAst = new rehypeReact({
     h4: generateHeading(4),
     h5: generateHeading(5),
     h6: generateHeading(6),
+    a: Link,
   },
 }).Compiler
 
