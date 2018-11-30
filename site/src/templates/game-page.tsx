@@ -58,7 +58,7 @@ const GamePage = ({ data }) => {
 
 export const query = graphql`
   query($shortSlug: String!) {
-    markdownRemark(frontmatter: { gamePath: { eq: $shortSlug } }) {
+    markdownRemark(fields: { gameSlug: { eq: $shortSlug } }) {
       fileAbsolutePath
     }
 
