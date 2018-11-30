@@ -2,8 +2,6 @@ import React, { createElement } from 'react'
 import { graphql } from 'gatsby'
 import rehypeReact from 'rehype-react'
 
-import generateSlug from 'utils/generate-slug'
-import FAQItem from 'components/faq-item'
 import Layout from 'components/layout'
 import Breadcrumbs from 'components/breadcrumbs'
 
