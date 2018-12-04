@@ -15,7 +15,7 @@ const GamePage = ({ data }) => {
   const rulebook = data.markdownRemark
 
   return (
-    <Layout title={game.name}>
+    <Layout title={game.name + ' FAQ and Rules'}>
       <Breadcrumbs
         path={[
           {

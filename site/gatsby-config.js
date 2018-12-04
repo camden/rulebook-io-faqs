@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: 'Rulebook.io FAQs',
+    title: 'Rulebook.io',
   },
   pathPrefix: `/rulebook-faqs`,
   plugins: [
