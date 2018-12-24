@@ -1,14 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import generateSlug from 'utils/generate-slug'
-import FAQItem from 'components/faq-item'
 import Layout from 'components/layout'
 import Breadcrumbs from 'components/breadcrumbs'
 import Link from 'components/link'
 import config from '../../config'
 
 import styles from './game-page.module.scss'
+import FAQList from 'components/faq-list'
 
 const GamePage = ({ data }) => {
   const game = data.gamesHJson
@@ -43,15 +42,7 @@ const GamePage = ({ data }) => {
         </div>
       </div>
       <p className={styles.description}>{game.description}</p>
-      {game.faqs.map(faq => {
-        const slug = `${game.fields.slug}/${generateSlug(faq)}`
-
-        return (
-          <div key={slug} className={styles.faqContainer}>
-            <FAQItem faq={faq} slug={slug} />
-          </div>
-        )
-      })}
+      <FAQList faqs={game.faqs} slug={game.fields.slug} title={'FAQs'} />
     </Layout>
   )
 }

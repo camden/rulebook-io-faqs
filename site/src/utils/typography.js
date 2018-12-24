@@ -18,7 +18,7 @@ const typography = new Typography({
     },
   ],
   overrideStyles: ({ rhythm }) => ({
-    'h2,h3,h4,h5,h6': {
+    'h1,h2,h3,h4,h5,h6': {
       marginTop: rhythm(1 / 2),
       marginBottom: rhythm(1 / 4),
     },
