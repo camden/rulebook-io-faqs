@@ -25,7 +25,7 @@ const Link: StatelessComponent<LinkProps> = props => {
   }
 
   return (
-    <a href={props.to} {...props} className={classNamesMerged} target={target}>
+    <a href={props.to} className={classNamesMerged} target={target}>
       {props.children}
     </a>
   )
