@@ -10,7 +10,7 @@ const Footer = () => {
       <div className={styles.content}>
         <small>
           Rulebook.io FAQs ‒ A website by{' '}
-          <Link to="https://cambickel.com" target="_blank">
+          <Link to="https://cambickel.com" openInNewTab={true}>
             Cam Bickel
           </Link>
           .

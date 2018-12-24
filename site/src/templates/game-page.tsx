@@ -32,14 +32,14 @@ const GamePage = ({ data }) => {
             </Link>
           </div>
         ) : null}
-        <div className={styles.infoItem}>
+        {/* <div className={styles.infoItem}>
           <Link to="/">BoardGameGeek</Link>
-        </div>
-        <div className={styles.infoItem}>
+        </div> */}
+        {/* <div className={styles.infoItem}>
           <Link to="https://amazon.com" openInNewTab={true}>
             Buy {game.name} on Amazon
           </Link>
-        </div>
+        </div> */}
       </div>
       <p className={styles.description}>{game.description}</p>
       <FAQList faqs={game.faqs} slug={game.fields.slug} title={'FAQs'} />

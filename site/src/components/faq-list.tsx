@@ -20,7 +20,7 @@ const FAQList = ({
 
   return (
     <>
-      <h2>{title}</h2>
+      <h2 className={styles.title}>{title}</h2>
       {faqs.map(faq => {
         const faqSlug = `${slug}/${generateSlug(faq)}`
 
