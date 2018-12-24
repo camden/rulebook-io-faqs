@@ -38,7 +38,7 @@ class GamePage extends React.Component<GamePageProps> {
   renderBGGLink() {
     return (
       <div className={styles.infoItem}>
-        <Link to="/">BoardGameGeek</Link>
+        <Link to="/">View on BoardGameGeek</Link>
       </div>
     )
   }
