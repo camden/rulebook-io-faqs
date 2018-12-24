@@ -1,5 +1,5 @@
 {
   name: San Juan
-  description: Description of game
+  description: San Juan is a card game based on Puerto Rico. The deck of 110 cards consists of production buildings (indigo, sugar, tobacco, coffee, and silver) and "violet" buildings that grant special powers or extra victory points. Cards from the hand can be either built or used as money to build something else; cards from the deck are used to represent goods produced by the production buildings, in which case they are left face-down. A seven-card hand limit is enforced once per round.
   faqs: []
 }
