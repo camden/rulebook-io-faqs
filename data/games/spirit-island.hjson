@@ -5,6 +5,7 @@
     {
       question: Does the game end if all of the Dahan are killed?
       answer: No, the game ends only when there are no blights left on the blight card, when the last invader card is drawn, or when any spirit loses all of its presence.
+      tags: ['dahan', 'game end']
       discussion: [
         https://www.reddit.com/r/boardgames/comments/81rctc/spirit_island_question_lose_conditions/
       ]
@@ -12,6 +13,7 @@
     {
       question: When a blight cascades, if all adjacent lands have blight, do you cascade again?
       answer: Yes, the cascade continues if the chosen adjacent land also has blight. Remember that blight cascades to only one adjacent land.
+      tags: ['blight', 'blight cascade']
       discussion: [
         https://www.reddit.com/r/boardgames/comments/843skr/spirit_island_blight_cascade_effect_question/
       ]
@@ -19,6 +21,7 @@
     {
       question: If I play a power card that has an additional effect, does that card count itself in the check for the elemental threshold?
       answer: Yes. This makes more sense if you make sure to look at the power choosing and energy paying part of the growth phase as distinctly separate from the fast powers phase. When you reach the powers phase you see "I have 4 mountains total, therefore I can use this effect that needs 4 mountains."
+      tags: ['power cards', 'elements']
       discussion: [
         https://www.reddit.com/r/boardgames/comments/83l0fy/spirit_island_question/
       ]

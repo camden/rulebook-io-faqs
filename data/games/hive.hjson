@@ -5,6 +5,9 @@
     {
       question: Can your beetle hop onto another beetle?
       answer: Yes, you can stack beetles as high as you want to.
+      tags: [
+        'beetles',
+      ]
       discussion: [
         https://www.reddit.com/r/boardgames/comments/84ircy/hive_a_couple_of_rule_questions/
       ]
@@ -12,6 +15,10 @@
     {
       question: Can a grasshopper jump over a tile with a beetle on top of it?
       answer: Yes, the grasshopper ignores all the tiles it jumps over and falls into the first empty hole.
+      tags: [
+        'beetles',
+        'grasshopper'
+      ]
       discussion: [
         https://www.reddit.com/r/boardgames/comments/84ircy/hive_a_couple_of_rule_questions/
       ]

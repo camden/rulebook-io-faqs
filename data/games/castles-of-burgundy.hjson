@@ -5,6 +5,10 @@
     {
       question: Do you collect silver at the end of the game?
       answer: Yes, the mines produce silver at the end of round 5.
+      tags: [
+        'silver',
+        'mines'
+      ]
       discussion: [
         https://boardgamegeek.com/thread/1586736/do-you-collect-silver-end-game
       ]

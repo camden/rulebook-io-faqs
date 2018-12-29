@@ -21,6 +21,7 @@
     {
       question: What happens if I need to sell my hotel but there are no houses left in bank?
       answer: You would have to sell the hotel AND the four houses (at half price), and would have no houses.
+      tags: ['houses', 'hotels', 'bank']
       discussion: [
         https://boardgamegeek.com/article/5932258#5932258
       ]
@@ -28,6 +29,7 @@
     {
       question: If I don't have enough money to buy a property I land on, but then at the start of next turn I do have enough money, can I buy that property before I roll?
       answer: No, you may not. If you can't / don't want to buy that property, it must be immediately auctioned to the other players.
+      tags: ['rolling']
       discussion: [
         https://boardgamegeek.com/thread/797140/can-you-buy-property-you-are-still-sitting-your-cu
       ]
@@ -35,6 +37,7 @@
     {
       question: If I get the Chance card "move back 3 spaces", do I play that square?
       answer: Yes, you would play that square. If you land on an unowned property, you may buy that property. If you land on someone else's owned property, you must pay them rent. If you land on a Community Chest space, you should draw a Community Chest card.
+      tags: ['chance', 'community chest']
       discussion: [
         https://boardgames.stackexchange.com/questions/33465/can-you-buy-a-property-after-being-sent-by-a-chance-card,
         https://boardgamegeek.com/thread/819397/chance-card-move-back-3-spaces-play-next-square
@@ -43,6 +46,7 @@
     {
       question: Do I have to keep my properties visible?
       answer: Yes, the properties that each player owns are public information.
+      tags: ['components']
       discussion: [
         https://boardgamegeek.com/thread/820989/property-title-deeds-hidden-or-open
       ]
@@ -50,6 +54,7 @@
     {
       question: Can I hide my money?
       answer: No, you must keep your money on the table in plain view.
+      tags: ['components']
       discussion: [
         https://www.quora.com/What-are-the-rules-about-money-in-Monopoly
       ]
@@ -57,6 +62,7 @@
     {
       question: Can I move houses and hotels between my properties?
       answer: No, you may not move houses or hotels. If you want, you can sell the houses/hotels (at half price) and then build them in a new location.
+      tags: ['components', 'houses', 'hotels']
       discussion: [
         https://boardgamegeek.com/thread/1166404/cannot-find-answer-anywhere
       ]
