@@ -4,7 +4,7 @@ $padding-vertical: 0.8rem;
 
 .container {
   background-color: #fff;
-  border-bottom: 1px solid $color-border;
+  // border-bottom: 1px solid $color-border;
   display: grid;
   padding: $padding-vertical $padding-horizontal-small;
   grid-row-gap: 10px;

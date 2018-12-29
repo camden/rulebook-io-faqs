@@ -87,7 +87,7 @@ class GamePage extends React.Component<GamePageProps> {
         <h2>FAQs by Tag</h2>
         <ul>
           {tags.map(tag => (
-            <li>
+            <li key={tag}>
               <Link
                 to={this.props.data.gamesHJson.fields.slug + `/tags?tag=${tag}`}
               >
@@ -131,7 +131,7 @@ class GamePage extends React.Component<GamePageProps> {
           ) : null}
         </div>
         {this.renderTags()}
-        <FAQList faqs={game.faqs} slug={game.fields.slug} title={'FAQs'} />
+        <FAQList faqs={game.faqs} slug={game.fields.slug} title={'All FAQs'} />
       </Layout>
     )
   }

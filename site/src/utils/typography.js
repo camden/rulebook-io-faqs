@@ -23,7 +23,7 @@ const typography = new Typography({
       paddingBottom: '6px',
       borderBottom: '1px solid #efefef',
       marginTop: rhythm(1 / 2),
-      marginBottom: rhythm(1 / 3),
+      marginBottom: rhythm(1 / 2),
     },
     'h1,h3,h4,h5,h6': {
       marginTop: rhythm(1 / 2),
