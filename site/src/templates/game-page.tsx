@@ -74,7 +74,9 @@ class GamePage extends React.Component<GamePageProps> {
         }
       }
     }, {})
-    const tags = Array.from(new Set(tagsWithDupes))
+    const tags = Array.from(new Set(tagsWithDupes)).sort((a, b) =>
+      a.toLowerCase().localeCompare(b.toLowerCase())
+    )
     return (
       <ul>
         {tags.map(tag => (
