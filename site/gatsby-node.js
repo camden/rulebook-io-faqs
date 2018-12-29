@@ -83,6 +83,7 @@ function createFaqItemNode(
     game: data.game,
     gameSlug: data.gameSlug,
     discussion: data.discussion,
+    tags: data.tags,
     slug: `${data.gameSlug}/${faqSlug}`,
     internal: {
       type: `FaqItem`,

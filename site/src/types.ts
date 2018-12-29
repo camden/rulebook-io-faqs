@@ -3,5 +3,6 @@ export type FAQ = {
   answer: string
   game: string
   gameSlug: string
+  tags?: string[]
   discussion: []
 }

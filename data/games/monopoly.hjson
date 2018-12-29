@@ -5,6 +5,7 @@
     {
       question: Can I buy houses and hotels when it's not my turn?
       answer: Yes, you can buy houses and hotels when it's not your turn.
+      tags: ['houses', 'hotels']
       discussion: [
         https://en.wikibooks.org/wiki/Monopoly/Official_Rules#Doubles
       ]

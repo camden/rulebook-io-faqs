@@ -9,9 +9,10 @@ import Breadcrumbs from 'components/breadcrumbs'
 import truncateTitle from 'utils/truncate-title'
 
 import styles from './faq-page.module.scss'
+import { FAQ } from 'src/types'
 
 const FAQPage = ({ data, pageContext }) => {
-  const faq = data.faqItem
+  const faq: FAQ = data.faqItem
 
   const title = truncateTitle(faq.question) + ' — ' + faq.game
 
@@ -30,15 +31,21 @@ const FAQPage = ({ data, pageContext }) => {
       />
       <h1>{faq.question}</h1>
       <p>{faq.answer}</p>
+      {renderTags(faq.tags)}
       <p>
         {faq.discussion.map(url => (
-          <Link to={url} key={url} target={'_blank'}>
+          <Link to={url} key={url} openInNewTab={true}>
             {formatDiscussionLinkTitle(url)}
           </Link>
         ))}
       </p>
     </Layout>
   )
+}
+
+const renderTags = (tags: string[]) => {
+  const innerBlock = tags.join(', ')
+  return <div>Tags: {innerBlock}</div>
 }
 
 const formatDiscussionLinkTitle = url => {
@@ -56,6 +63,7 @@ export const query = graphql`
     faqItem(slug: { eq: $slug }) {
       game
       gameSlug
+      tags
       question
       answer
       discussion
