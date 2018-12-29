@@ -77,18 +77,26 @@ class GamePage extends React.Component<GamePageProps> {
     const tags = Array.from(new Set(tagsWithDupes)).sort((a, b) =>
       a.toLowerCase().localeCompare(b.toLowerCase())
     )
+
+    if (!tags || tags.length === 0) {
+      return null
+    }
+
     return (
-      <ul>
-        {tags.map(tag => (
-          <li>
-            <Link
-              to={this.props.data.gamesHJson.fields.slug + `/tags?tag=${tag}`}
-            >
-              {capitalize(tag)}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className={styles.tagList}>
+        <h2>FAQs by Tag</h2>
+        <ul>
+          {tags.map(tag => (
+            <li>
+              <Link
+                to={this.props.data.gamesHJson.fields.slug + `/tags?tag=${tag}`}
+              >
+                {capitalize(tag)}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     )
   }
 
@@ -122,10 +130,7 @@ class GamePage extends React.Component<GamePageProps> {
             <>{this.renderLinkToRulebook('View full rules')}</>
           ) : null}
         </div>
-        <div className={styles.tagList}>
-          <h2>FAQs by Tag</h2>
-          {this.renderTags()}
-        </div>
+        {this.renderTags()}
         <FAQList faqs={game.faqs} slug={game.fields.slug} title={'FAQs'} />
       </Layout>
     )
