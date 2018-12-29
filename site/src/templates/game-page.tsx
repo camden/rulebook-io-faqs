@@ -9,6 +9,7 @@ import config from '../../config'
 import styles from './game-page.module.scss'
 import FAQList from 'components/faq-list'
 import { FAQ } from 'src/types'
+import capitalize from 'utils/capitalize'
 
 type GamePageProps = {
   data: {
@@ -53,6 +54,42 @@ class GamePage extends React.Component<GamePageProps> {
     )
   }
 
+  renderTags() {
+    const faqs = this.props.data.gamesHJson.faqs
+    const tagsWithDupes = faqs
+      .map(f => f.tags)
+      .filter(x => x)
+      .reduce((a, b) => a.concat(b), [])
+    const tagFrequency = tagsWithDupes.reduce((frq, cur) => {
+      const existingFrequency = frq[cur]
+      if (existingFrequency) {
+        return {
+          ...frq,
+          [cur]: existingFrequency + 1,
+        }
+      } else {
+        return {
+          ...frq,
+          [cur]: 1,
+        }
+      }
+    }, {})
+    const tags = Array.from(new Set(tagsWithDupes))
+    return (
+      <ul>
+        {tags.map(tag => (
+          <li>
+            <Link
+              to={this.props.data.gamesHJson.fields.slug + `/tags?tag=${tag}`}
+            >
+              {capitalize(tag)}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
   render() {
     const { data } = this.props
     const game = data.gamesHJson
@@ -83,6 +120,10 @@ class GamePage extends React.Component<GamePageProps> {
             <>{this.renderLinkToRulebook('View full rules')}</>
           ) : null}
         </div>
+        <div className={styles.tagList}>
+          <h2>FAQs by Tag</h2>
+          {this.renderTags()}
+        </div>
         <FAQList faqs={game.faqs} slug={game.fields.slug} title={'FAQs'} />
       </Layout>
     )
@@ -102,6 +143,7 @@ export const query = graphql`
         slug
       }
       faqs {
+        tags
         question
         answer
       }

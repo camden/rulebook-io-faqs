@@ -13,6 +13,7 @@
     {
       question: What happens if two (or more) players want to buy houses or hotels and there aren't enough for everyone?
       answer: If another player expresses interest in the houses/hotels and there is a building shortage, an auction is to be held by the banker (even if it is still your turn).
+      tags: ['houses', 'hotels', 'auctions']
       discussion: [
         https://boardgamegeek.com/article/5932258#5932258
       ]

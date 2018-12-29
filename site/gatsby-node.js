@@ -150,6 +150,9 @@ exports.createPages = ({
         const rulebookPageTemplate = path.resolve(
           `src/templates/rulebook-page.tsx`
         )
+        const tagsByGamePageTemplate = path.resolve(
+          `src/templates/faq-tag-page.tsx`
+        )
 
         const { allGamesHJson, allFaqItem, allMarkdownRemark } = result.data
         const games = allGamesHJson.edges
@@ -157,6 +160,14 @@ exports.createPages = ({
         games.forEach(({ node }) => {
           const slug = node.fields.slug
           const shortSlug = node.fields.shortSlug
+
+          createPage({
+            path: slug + '/tags',
+            component: tagsByGamePageTemplate,
+            context: {
+              shortSlug,
+            },
+          })
 
           createPage({
             path: slug,
