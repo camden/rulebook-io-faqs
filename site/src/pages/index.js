@@ -10,7 +10,12 @@ const alphabeticalSort = (_a, _b) => {
 }
 
 const IndexPage = ({ data }) => (
-  <Layout title={'All Games'}>
+  <Layout
+    title={'All Games'}
+    description={
+      'Rules and FAQs for all of your favorite games. Mobile-optimized and snappy!'
+    }
+  >
     <h1>All Games</h1>
     {data.allGamesHJson.edges.sort(alphabeticalSort).map(({ node }) => {
       return (
