@@ -3,6 +3,10 @@
   margin-bottom: 15px;
   font-style: italic;
   font-weight: bold;
+
+  @media print {
+    display: none;
+  }
 }
 
 .separator {
