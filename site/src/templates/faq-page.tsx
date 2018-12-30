@@ -10,6 +10,7 @@ import truncateTitle from 'utils/truncate-title'
 
 import styles from './faq-page.module.scss'
 import { FAQ } from 'src/types'
+import capitalize from 'utils/capitalize'
 
 const FAQPage = ({ data, pageContext }) => {
   const faq: FAQ = data.faqItem
@@ -31,7 +32,7 @@ const FAQPage = ({ data, pageContext }) => {
       />
       <h1>{faq.question}</h1>
       <p>{faq.answer}</p>
-      {renderTags(faq.tags)}
+      {renderTags(faq.tags, faq.gameSlug)}
       <p>
         {faq.discussion.map(url => (
           <Link to={url} key={url} openInNewTab={true}>
@@ -43,8 +44,12 @@ const FAQPage = ({ data, pageContext }) => {
   )
 }
 
-const renderTags = (tags: string[]) => {
-  const innerBlock = tags.join(', ')
+const renderTags = (tags: string[], gameSlug) => {
+  const innerBlock = tags.map(t => (
+    <Link style={{ marginRight: 16 }} to={gameSlug + `/tags?tag=${t}`}>
+      {capitalize(t)}
+    </Link>
+  ))
   return <div>Tags: {innerBlock}</div>
 }
 

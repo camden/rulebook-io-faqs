@@ -53,11 +53,11 @@ class FAQTagPage extends React.Component<FAQTagPageProps> {
 
     let pageTitle = 'FAQs'
     if (this.getSearchTag()) {
-      pageTitle = `FAQs by Tag: ${this.getSearchTag({ capitalize: true })}`
+      pageTitle = `${this.getSearchTag({ capitalize: true })} FAQs`
     }
 
     return (
-      <Layout title={game.name + ' ' + pageTitle}>
+      <Layout title={game.name + ' — ' + pageTitle}>
         <Breadcrumbs
           path={[
             {

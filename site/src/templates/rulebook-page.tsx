@@ -39,7 +39,7 @@ const RulebookPage = ({ data }) => {
   const headings = data.markdownRemark.headings
   const renderedMarkdown = renderAst(htmlAst)
   return (
-    <Layout>
+    <Layout title={game.name + ' Rules'}>
       <Breadcrumbs
         path={[
           {
