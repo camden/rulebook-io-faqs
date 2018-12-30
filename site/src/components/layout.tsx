@@ -10,9 +10,10 @@ import styles from './layout.module.scss'
 
 type LayoutProps = {
   title?: string
+  description?: string
 }
 
-const Layout: SFC<LayoutProps> = ({ children, title }) => (
+const Layout: SFC<LayoutProps> = ({ children, title, description }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -40,6 +41,7 @@ const Layout: SFC<LayoutProps> = ({ children, title }) => (
               name="viewport"
               content="width=device-width, initial-scale=1"
             />
+            <meta name="description" content={description} />
           </Helmet>
           <div className={styles.header}>
             <Header siteTitle={data.site.siteMetadata.title} />
@@ -53,9 +55,5 @@ const Layout: SFC<LayoutProps> = ({ children, title }) => (
     }}
   />
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default Layout

@@ -106,7 +106,10 @@ class GamePage extends React.Component<GamePageProps> {
     const rulebook = data.markdownRemark
 
     return (
-      <Layout title={game.name + ' Rules and FAQ'}>
+      <Layout
+        title={game.name + ' Rules and FAQ'}
+        description={game.description}
+      >
         <Breadcrumbs
           path={[
             {

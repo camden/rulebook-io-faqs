@@ -17,8 +17,10 @@ const FAQPage = ({ data, pageContext }) => {
 
   const title = truncateTitle(faq.question) + ' — ' + faq.game
 
+  const description = `Answer to the question: ${faq.question}.`
+
   return (
-    <Layout title={title}>
+    <Layout title={title} description={description}>
       <Breadcrumbs
         path={[
           {

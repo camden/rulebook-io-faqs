@@ -38,8 +38,9 @@ const RulebookPage = ({ data }) => {
   const htmlAst = data.markdownRemark.htmlAst
   const headings = data.markdownRemark.headings
   const renderedMarkdown = renderAst(htmlAst)
+
   return (
-    <Layout title={game.name + ' Rules'}>
+    <Layout title={game.name + ' Rules'} description={game.description}>
       <Breadcrumbs
         path={[
           {
@@ -75,6 +76,7 @@ export const query = graphql`
 
     gamesHJson(fields: { shortSlug: { eq: $gameSlug } }) {
       name
+      description
       fields {
         slug
       }
