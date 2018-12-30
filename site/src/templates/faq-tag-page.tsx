@@ -56,9 +56,13 @@ class FAQTagPage extends React.Component<FAQTagPageProps> {
       pageTitle = `${this.getSearchTag({ capitalize: true })} FAQs`
     }
 
-    const description = `FAQs related to ${this.getSearchTag({
-      capitalize: true,
-    })} for ${game.name}.`
+    let description = `FAQs for ${game.name}.`
+
+    if (this.getSearchTag()) {
+      description = `FAQs related to ${this.getSearchTag({
+        capitalize: true,
+      })} for ${game.name}.`
+    }
 
     return (
       <Layout title={game.name + ' — ' + pageTitle} description={description}>
