@@ -3,7 +3,7 @@ import Layout from 'components/layout'
 import Link from 'components/link'
 
 const AddFaqPage = () => (
-  <Layout>
+  <Layout title={'How to Add New Content'}>
     <h1>How to Add New Content</h1>
     <p>
       There's no formal process in place (yet) to easily add new rulebooks/FAQs.
