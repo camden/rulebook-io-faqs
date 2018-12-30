@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => {
       </div>
 
       <div className={styles.menuItems}>
-        <MenuItem name="Add a FAQ" to="/add-new-faq" />
+        <MenuItem name="Add a FAQ or Rulebook" to="/add-content" />
       </div>
     </header>
   )
