@@ -8,7 +8,7 @@ const Logo = () => {
   return (
     <div className={styles.title}>
       <Link to="/" className={styles.text}>
-        Rulebook.io <span className={styles.emphasis}>FAQs</span>
+        Rulebook.io
       </Link>
     </div>
   )

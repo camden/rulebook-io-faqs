@@ -5,9 +5,9 @@ import Link from 'components/link'
 const FAQItem = ({ faq, slug }: { faq: FAQ; slug: string }) => {
   return (
     <div>
-      <h3>
+      <span>
         <Link to={slug}>{faq.question}</Link>
-      </h3>
+      </span>
       <p>{faq.answer}</p>
     </div>
   )

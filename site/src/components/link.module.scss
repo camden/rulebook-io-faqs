@@ -3,6 +3,7 @@
 .link {
   color: $color-links;
   text-decoration-color: transparent;
+  font-weight: bold;
   transition: all 200ms ease-out;
 
   &:hover {

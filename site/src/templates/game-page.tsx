@@ -111,7 +111,6 @@ class GamePage extends React.Component<GamePageProps> {
           path={[
             {
               title: game.name,
-              link: game.fields.slug,
             },
           ]}
         />

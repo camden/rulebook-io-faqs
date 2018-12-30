@@ -11,7 +11,7 @@ const alphabeticalSort = (_a, _b) => {
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <h2>All Games:</h2>
+    <h2>All Games</h2>
     {data.allGamesHJson.edges.sort(alphabeticalSort).map(({ node }) => {
       return (
         <div key={node.id}>
