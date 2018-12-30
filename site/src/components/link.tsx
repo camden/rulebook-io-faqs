@@ -8,10 +8,11 @@ type LinkProps = {
   className?: string
   to: string
   openInNewTab?: boolean
+  style?: any
 }
 
 const Link: StatelessComponent<LinkProps> = props => {
-  let classNamesMerged = `${styles.link} ${props.className}`
+  let classNamesMerged = `${styles.link} ${props.className || ''}`
 
   const internal = /^\/(?!\/)/.test(props.to)
 
@@ -25,7 +26,12 @@ const Link: StatelessComponent<LinkProps> = props => {
   }
 
   return (
-    <a href={props.to} className={classNamesMerged} target={target}>
+    <a
+      href={props.to}
+      className={classNamesMerged}
+      target={target}
+      style={props.style}
+    >
       {props.children}
     </a>
   )
