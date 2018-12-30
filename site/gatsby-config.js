@@ -66,9 +66,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Rulebook.io FAQs',
+        name: 'Rulebook.io',
         start_url: '/',
         display: 'minimal-ui',
+        icon: 'src/images/logo.png',
       },
     },
     'gatsby-plugin-offline',
