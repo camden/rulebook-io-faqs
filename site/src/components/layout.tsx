@@ -7,10 +7,28 @@ import Header from 'components/header'
 import Footer from 'components/footer'
 
 import styles from './layout.module.scss'
+import { Redirect, Match, Router } from '@reach/router'
 
 type LayoutProps = {
   title?: string
   description?: string
+}
+
+const ConditionalRedirect = () => {
+  return (
+    <>
+      <Match path="/rules/:game">
+        {props =>
+          props.match ? (
+            <Redirect to={`/games/${props.match.game}/rules`} noThrow />
+          ) : null
+        }
+      </Match>
+      <Match path="/browse">
+        {props => (props.match ? <Redirect to={`/`} noThrow /> : null)}
+      </Match>
+    </>
+  )
 }
 
 const Layout: SFC<LayoutProps> = ({ children, title, description }) => (
@@ -34,6 +52,7 @@ const Layout: SFC<LayoutProps> = ({ children, title, description }) => (
 
       return (
         <div className={styles.container}>
+          <ConditionalRedirect />
           <Helmet title={pageTitle}>
             <html lang="en" />
             <meta
