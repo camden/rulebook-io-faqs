@@ -7,7 +7,7 @@ import Header from 'components/header'
 import Footer from 'components/footer'
 
 import styles from './layout.module.scss'
-import { Redirect, Match, Router } from '@reach/router'
+import { Redirect, Match } from '@reach/router'
 
 type LayoutProps = {
   title?: string
