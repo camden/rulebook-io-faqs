@@ -11,8 +11,9 @@ import truncateTitle from 'utils/truncate-title'
 import styles from './faq-page.module.scss'
 import { FAQ } from 'src/types'
 import capitalize from 'utils/capitalize'
+import SEOFaqPage from 'components/seo-faq-page'
 
-const FAQPage = ({ data, pageContext }) => {
+const FAQPage = ({ data }) => {
   const faq: FAQ = data.faqItem
 
   const title = truncateTitle(faq.question) + ' — ' + faq.game
@@ -21,6 +22,7 @@ const FAQPage = ({ data, pageContext }) => {
 
   return (
     <Layout title={title} description={description}>
+      <SEOFaqPage question={faq.question} answer={faq.answer} slug={faq.slug} />
       <Breadcrumbs
         path={[
           {
@@ -70,6 +72,7 @@ export const query = graphql`
     faqItem(slug: { eq: $slug }) {
       game
       gameSlug
+      slug
       tags
       question
       answer
