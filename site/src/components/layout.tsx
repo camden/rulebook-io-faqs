@@ -19,7 +19,15 @@ const ConditionalRedirect = () => {
       <Match path="/rules/:game">
         {props =>
           props.match ? (
-            <Redirect to={`/games/${props.match.game}/rules`} noThrow />
+            <>
+              <Helmet>
+                <link
+                  rel="canonical"
+                  href={`https://rulebook.io/games/${props.match.game}/rules`}
+                />
+              </Helmet>
+              <Redirect to={`/games/${props.match.game}/rules`} noThrow />
+            </>
           ) : null
         }
       </Match>
