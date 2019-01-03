@@ -154,6 +154,7 @@ export const query = graphql`
       }
       faqs {
         tags
+        permalinkQuestion
         question
         answer
       }

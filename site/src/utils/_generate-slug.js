@@ -4,8 +4,13 @@ const slug = require('slug')
 const config = require('../../config')
 
 module.exports = function(faq) {
+  let question = faq.question
+  if (faq.permalinkQuestion) {
+    question = faq.permalinkQuestion
+  }
+
   return slug(
-    faq.question
+    question
       .toLowerCase()
       .split(' ')
       .slice(0, config.slugWordLength)
