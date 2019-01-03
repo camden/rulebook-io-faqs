@@ -3,12 +3,14 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: 'Rulebook.io',
+    siteUrl: 'https://rulebook.io',
   },
   plugins: [
     'gatsby-transformer-hjson',
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
-    `gatsby-plugin-typescript`,
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
