@@ -4,7 +4,6 @@ module.exports = {
   siteMetadata: {
     title: 'Rulebook.io',
   },
-  pathPrefix: `/rulebook-faqs`,
   plugins: [
     'gatsby-transformer-hjson',
     'gatsby-transformer-remark',
