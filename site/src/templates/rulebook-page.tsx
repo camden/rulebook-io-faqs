@@ -49,6 +49,7 @@ const RulebookPage = ({ data }) => {
           },
           {
             title: 'Rulebook',
+            link: game.fields.slug + '/rules',
           },
         ]}
       />

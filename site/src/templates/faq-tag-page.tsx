@@ -52,17 +52,20 @@ class FAQTagPage extends React.Component<FAQTagPageProps> {
     const game = data.gamesHJson
 
     let pageTitle = 'FAQs'
-    if (this.getSearchTag()) {
-      pageTitle = `${this.getSearchTag({ capitalize: true })} FAQs`
+    const searchTag = this.getSearchTag()
+    const searchTagCapitalized = this.getSearchTag({ capitalize: true })
+    if (searchTag) {
+      pageTitle = `${searchTagCapitalized} FAQs`
     }
 
     let description = `FAQs for ${game.name}.`
 
-    if (this.getSearchTag()) {
-      description = `FAQs related to ${this.getSearchTag({
-        capitalize: true,
-      })} for ${game.name}.`
+    if (searchTag) {
+      description = `FAQs related to ${searchTagCapitalized} for ${game.name}.`
     }
+
+    const query = searchTag ? `?tag=${searchTag}` : ''
+    const currentPageSlug = `${game.fields.slug}/tags${query}`
 
     return (
       <Layout title={game.name + ' — ' + pageTitle} description={description}>
@@ -74,6 +77,7 @@ class FAQTagPage extends React.Component<FAQTagPageProps> {
             },
             {
               title: pageTitle,
+              link: currentPageSlug,
             },
           ]}
         />

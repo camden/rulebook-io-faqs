@@ -31,6 +31,7 @@ const FAQPage = ({ data }) => {
           },
           {
             title: faq.question,
+            link: faq.slug,
           },
         ]}
       />
