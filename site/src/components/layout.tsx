@@ -17,14 +17,14 @@ type LayoutProps = {
 const ConditionalRedirect = () => {
   return (
     <>
-      <Match path="/rules/:game">
+      <Match path="*/rules/:game">
         {props =>
           props.match ? (
             <Redirect to={`/games/${props.match.game}/rules`} noThrow />
           ) : null
         }
       </Match>
-      <Match path="/browse">
+      <Match path="*/browse">
         {props => (props.match ? <Redirect to={`/`} noThrow /> : null)}
       </Match>
     </>
