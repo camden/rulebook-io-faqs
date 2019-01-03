@@ -54,6 +54,7 @@ class FAQTagPage extends React.Component<FAQTagPageProps> {
     let pageTitle = 'FAQs'
     const searchTag = this.getSearchTag()
     const searchTagCapitalized = this.getSearchTag({ capitalize: true })
+
     if (searchTag) {
       pageTitle = `${searchTagCapitalized} FAQs`
     }
