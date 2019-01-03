@@ -18,7 +18,9 @@ const FAQPage = ({ data }) => {
 
   const title = truncateTitle(faq.question) + ' — ' + faq.game
 
-  const description = `Answer to the question: ${faq.question}.`
+  const description = `Question: ${faq.question} Answer: ${truncateTitle(
+    faq.answer
+  )}`
 
   return (
     <Layout title={title} description={description}>
