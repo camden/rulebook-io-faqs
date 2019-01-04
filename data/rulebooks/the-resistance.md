@@ -80,13 +80,15 @@ The team building phase consists of the Leader picking the players that he would
 ### Mission Team Assignment
 After appropriate discussion, the Leader takes the required number of Team Tokens *(using the chart below)* and assigns each Team Token to any player including himself. Note a player may only be assigned one Team Token.
 
-| Players          | 5 | 6 | 7 | 8 | 9 | 10 |
-|------------------|---|---|---|---|---|----|
-| 1st Mission Team | 2 | 2 | 2 | 3 | 3 | 3  |
-| 2nd Mission Team | 3 | 3 | 3 | 4 | 4 | 4  |
-| 3rd Mission Team | 2 | 4 | 3 | 4 | 4 | 4  |
-| 4th Mission Team | 3 | 3 | 4 | 5 | 5 | 5  |
-| 5th Mission Team | 3 | 4 | 4 | 5 | 5 | 5  |
+| Players          | 5 | 6 | 7  | 8 - 10 |
+|------------------|---|---|----|--------|
+| 1st Mission Team | 2 | 2 | 2  |   3    |
+| 2nd Mission Team | 3 | 3 | 3  |   4    |
+| 3rd Mission Team | 2 | 4 | 3  |   4    |
+| 4th Mission Team | 3 | 3 | 4* |   5*   |
+| 5th Mission Team | 3 | 4 | 4  |   5    |
+
+Missions marked with an asterisk (*) require two fail cards to be played in order for the mission to fail.
 
 > **Spy Strategy Tip:** Act like the resistance
 > The resistance players are out to get you - think fast and remember if you act and vote like a resistance player you will be harder to spot. All the resistance operatives will want to go on the missions, and so should you.

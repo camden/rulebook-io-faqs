@@ -21,23 +21,23 @@ To be the only player left in the game who is not bankrupt.
 
 # Equipment
 
-- 1 gameboard
+* 1 gameboard
 
-- 10 playing tokens (including 2 spares)
+* 10 playing tokens (including 2 spares)
 
-- 28 Title Deed cards
+* 28 Title Deed cards
 
-- 16 Chance cards
+* 16 Chance cards
 
-- 16 Community Chest cards
+* 16 Community Chest cards
 
-- 1 pack of MONOPOLY money
+* 1 pack of MONOPOLY money
 
-- 32 Houses
+* 32 Houses
 
-- 12 Hotels
+* 12 Hotels
 
-- 2 dice
+* 2 dice
 
 # Set Up
 
@@ -57,21 +57,21 @@ Each player selects a playing token and places it on "GO".
 
 One player is elected Banker. If there are more than five players, the Banker may choose to take on this role only.
 
-The Banker gives each player \$1,500 divided as follows:
+The Banker gives each player $1,500 divided as follows:
 
-- Two x \$500
+* Two x $500
 
-- Four x \$100
+* Four x $100
 
-- One x \$50
+* One x $50
 
-- One x \$20
+* One x $20
 
-- Two x \$10
+* Two x $10
 
-- One x \$5
+* One x $5
 
-- Five x \$1
+* Five x $1
 
 In addition to holding the money, the Banker also keeps the Title Deed cards, Houses and Hotels until they are bought by the players. The Banker also pays salaries and bonuses, lends money when required on mortgages and collects all taxes, fines, loans and interest. In the event of auctions, the Banker acts as auctioneer.
 
@@ -85,21 +85,21 @@ Players roll both dice. The player with the highest score goes first and play pa
 
 On your turn, roll both dice and move clockwise around the board in the direction of the arrow. The space you land on will determine what you have to do. Two or more tokens may rest on the same space at the same time. You may do one of the following according to the space you land on:
 
-- Buy Building Sites or other Properties
+* Buy Building Sites or other Properties
 
-- Pay rent by landing on an owned Property
+* Pay rent by landing on an owned Property
 
-- Pay taxes
+* Pay taxes
 
-- Draw a Chance or Community Chest card
+* Draw a Chance or Community Chest card
 
-- Go to Jail
+* Go to Jail
 
-- Rest on the Free Parking space
+* Rest on the Free Parking space
 
-- Collect \$200 salary
+* Collect $200 salary
 
-- Be “Just Visiting” Jail
+* Be “Just Visiting” Jail
 
 ## Doubles
 
@@ -107,7 +107,7 @@ If you roll a double, move your token and act on the space you have landed on as
 
 ## Passing "GO"
 
-Every time you either land on or pass "GO" while moving in the direction of the arrow, you are paid $200 by the Bank. It is possible to collect$200 twice within one turn if, for example, you land on the Chance or Community Chest space immediately after "GO" and pick the card that tells you to "Advance to GO".
+Every time you either land on or pass "GO" while moving in the direction of the arrow, you are paid $200 by the Bank. It is possible to collect $200 twice within one turn if, for example, you land on the Chance or Community Chest space immediately after "GO" and pick the card that tells you to "Advance to GO".
 
 ## Buying Property
 
@@ -139,21 +139,21 @@ If the Station is already owned when you arrive, you must pay the amount stated 
 
 ## Landing on "Chance" and "Community Chest"
 
-Landing on one of these spaces means you must take the relevant card from the top of the deck. These cards may ask you to: \* Move your token
+Landing on one of these spaces means you must take the relevant card from the top of the deck. These cards may ask you to: * Move your token
 
-- Pay money – for example, in taxes
+* Pay money – for example, in taxes
 
-- Receive money
+* Receive money
 
-- Go to Jail
+* Go to Jail
 
-- Get out of Jail free.
+* Get out of Jail free.
 
 You must follow the instructions on the card and act immediately before returning the card to the bottom of the deck. If you pick a "Get Out of Jail Free" card, you may keep it until you wish to use it or sell it at a mutually agreed price.
 
 **Note**: a card may instruct you to move your token to another space.
 
-If you pass "GO" on the way, collect \$200. You do not pass "GO"
+If you pass "GO" on the way, collect $200. You do not pass "GO"
 
 when you are sent to Jail, or if you are sent back (for example, to Old Kent Road).
 
@@ -171,19 +171,19 @@ There is no penalty for landing here: you may still undertake transactions as us
 
 You will be sent to Jail if:
 
-- you land on the "GO TO JAIL" space, or
+* you land on the "GO TO JAIL" space, or
 
-- you pick a Chance or Community Chest card which tells you to "GO DIRECTLY TO JAIL", or
+* you pick a Chance or Community Chest card which tells you to "GO DIRECTLY TO JAIL", or
 
-- you roll a double three times in succession on your turn.
+* you roll a double three times in succession on your turn.
 
-Your turn ends when you are sent to Jail. If you are sent there, you may not collect a \$200 salary, regardless of where you are on the board.
+Your turn ends when you are sent to Jail. If you are sent there, you may not collect a $200 salary, regardless of where you are on the board.
 
 To get out of Jail you may:
 
-- pay a fine of \$50 and continue on your next turn, or purchase a "Get Out Of Jail Free" card from another player _ at a mutually agreed price and use this to get out, or _ use a "Get Out Of Jail Free" card if you have one, or \* wait there for three turns, rolling the dice on each turn to try to roll a double. If you roll a double on any turn, move out of Jail using this dice roll.
+* pay a fine of $50 and continue on your next turn, or purchase a "Get Out Of Jail Free" card from another player * at a mutually agreed price and use this to get out, or * use a "Get Out Of Jail Free" card if you have one, or * wait there for three turns, rolling the dice on each turn to try to roll a double. If you roll a double on any turn, move out of Jail using this dice roll.
 
-After you have waited three turns, you must move out of Jail and pay \$50 before moving your token according to your dice roll.
+After you have waited three turns, you must move out of Jail and pay $50 before moving your token according to your dice roll.
 
 While in Jail you can collect rent on Properties provided they are not mortgaged.
 

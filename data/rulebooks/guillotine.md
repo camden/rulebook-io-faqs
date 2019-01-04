@@ -17,7 +17,7 @@ Shuffle the **Noble deck** and the **Action deck** separately and deal **5 actio
 
 # Play
 
-At the beginning of the first day, place the top **12 cards from the noble deck faceup in a line from left to right**.
+At the beginning of the first day, place the top **12 cards from the noble deck face up in a line from left to right**.
 
 The right end is where the guillotine is, where nobles will be beheaded (collected).
 
@@ -29,7 +29,7 @@ Action cards allow you to move nobles forward and backward in line, draw extra c
 
 ## Collect the first noble in line
 
-Nobles are worth various points. When you collect a noble place it faceup in front of you to make a score pile.
+Nobles are worth various points. When you collect a noble place it face up in front of you to make a score pile.
 
 ## Draw an action card (whether or not you played one)
 

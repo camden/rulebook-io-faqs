@@ -124,15 +124,15 @@ Pay the cost (shown on _all_ exposed red rectangles before taking the action), c
 
 If a worker produces another worker, after paying the cost, pick up the leftmost worker of the Produce action on your player mat and place it on the village. Once you have a worker on the board it cannot return to your player mat.
 
-| Terrain | Produces |
-|---------|----------|
-| Mountain | Metal |
-| Farm | Food |
-| Tundra | Oil |
-| Forest | Wood |
-| Village | Worker |
-| Lake | - |
-| Factory | - |
+| Terrain  | Produces |
+| -------- | -------- |
+| Mountain | Metal    |
+| Farm     | Food     |
+| Tundra   | Oil      |
+| Forest   | Wood     |
+| Village  | Worker   |
+| Lake     | -        |
+| Factory  | -        |
 
 Any number of resource tokens or workers can be on a territory, and there is no limit to the number of resource tokens (if necessary, place a multiplier token next to resource tokens).
 
@@ -166,7 +166,7 @@ Structures cannot be destroyed or moved.
 
 You may build on the Factory territory. Your home base isn’t a territory and you cannot build there. You can’t build structures on lakes.
 
-The benefit revealed by removing a structure from your player mat is an additional benefit you will gain when taking the toprow action directly above it in future.
+The benefit revealed by removing a structure from your player mat is an additional benefit you will gain when taking the top row action directly above it in future.
 
 #### Monument
 
@@ -196,7 +196,7 @@ The 4 one-time bonuses are: gain 2 power; gain 2 coins; gain 2 popularity; and d
 
 In addition to the one-time bonus, each recruit gives you a **Recruit Ongoing Bonus** related to the action from which you selected the recruit token (the bonus in the circle).
 
-For the rest of the game, whenever _you or the player to your immediate left or right_ (shown in the icon in the red circle) take the bottom-row action in the section of the player mat from which the recruit was taken, you gain the specified bonus. Toprow actions or a similar action on a Factory card do not count.
+For the rest of the game, whenever _you or the player to your immediate left or right_ (shown in the icon in the red circle) take the bottom-row action in the section of the player mat from which the recruit was taken, you gain the specified bonus. Top row actions or a similar action on a Factory card do not count.
 
 If more than one player would gain a Recruit Ongoing Bonus, the active player goes first, followed by the player on their left, then the player on their right. If one of those players places their 6th star as a result, the game immediately ends.
 

@@ -197,11 +197,11 @@ A player is not required to use the special function of an occupied violet build
 
 ### Small Market
 
-Trader Phase\*\* Receive an extra doubloon when selling a good.
+Trader Phase** Receive an extra doubloon when selling a good.
 
 ### Hacienda
 
-Settler Phase\*\* Before taking a face-up plantation tile, take an _additional_ tile from a face-down stack.
+Settler Phase** Before taking a face-up plantation tile, take an _additional_ tile from a face-down stack.
 
 It must be immediately placed on an empty island space. You cannot ever take a quarry instead of the extra tile.
 

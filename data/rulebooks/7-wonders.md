@@ -46,7 +46,7 @@ Each Age has 6 game turns. During each turn the players simultaneously put into 
 
 **Commercial Structures (yellow)** earn coins, produce resource, change commerce rules and may earn victory points.
 
-**Military Structures (red)** increase your militay might.
+**Military Structures (red)** increase your military might.
 
 **Guilds (purple)** score points according to specific criteria.
 
@@ -70,9 +70,9 @@ You may want to build a structure requiring resources you do not produce. If the
 
 Resources you can buy from neighboring cities are :
 
-* the resources initially produced by the city (the upper left of the player’s Wonder board).
+- the resources initially produced by the city (the upper left of the player’s Wonder board).
 
-- the resources from its brown cards and gray cards.
+* the resources from its brown cards and gray cards.
 
 Resources produced by some commercial structures (yellow cards) or some Wonders are reserved to their owner.
 
@@ -108,7 +108,7 @@ The direction the cards are passed depends on the Age:
 
 # 2. Action
 
-All players perform one of the 3 possible actions simultanously with their chosen card.
+All players perform one of the 3 possible actions simultaneously with their chosen card.
 
 ## a. Build a Structure
 
@@ -116,7 +116,7 @@ All players perform one of the 3 possible actions simultanously with their chose
 
 Brown and gray cards are placed beneath one another starting from the upper left corner of the Wonders board.
 
-Other cards are placed faceup in the area in front of your Wonder board, to form your city. Stack your cards by color, leaving the name of each structure visible.
+Other cards are placed face up in the area in front of your Wonder board, to form your city. Stack your cards by color, leaving the name of each structure visible.
 
 ## b. Build a Stage of Your Wonder
 
@@ -205,6 +205,7 @@ Each Guild is worth a number of victory points depending on the configuration of
 # 2 Player Expert Variant
 
 ## Setup
+
 Use the same cards as for 3 players. Each player is given a board, and then a third **Free City** board is placed beside them.
 
 Place the **Border card** between the players. Each player is dealt a 7 card hand and the remaining 7 cards make a facedown draw pile to the right of the Border card.

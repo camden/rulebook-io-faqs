@@ -108,7 +108,7 @@ For your first game, it’s recommended that you play a 3-5 player game to get a
 Include the following cards:
 
 | 3 Players                                                  | 4 Players   | 5 Players    |
-|------------------------------------------------------------|-------------|--------------|
+| ---------------------------------------------------------- | ----------- | ------------ |
 | 2 Werewolves, 1 Seer, 1 Robber, 1 Troublemaker, 1 Villager | +1 Villager | +2 Villagers |
 
 There should always be three more cards than the number of players. Shuffle the selected cards face down and deal one to each player. Put the remaining three cards and tokens that match all the cards being used in the middle of the table.
@@ -241,7 +241,7 @@ At night, the Doppelgänger looks at (but does not switch) one other player’s 
 
 *Werewolf or Mason:* She wakes up with the other Werewolves or Masons when they are called. She is on the werewolf team if she views a Werewolf, and is on the village team if she views a Mason.
 
-*Seer, Robber, Troublemaker, Drunk:* She immmediately does that role’s action (she does not wake up again with the original role when it is called).
+*Seer, Robber, Troublemaker, Drunk:* She immediately does that role’s action (she does not wake up again with the original role when it is called).
 
 *Minion:* At the end of the Doppelgänger phase, the Announcer tells the Doppelgänger to close her eyes unless she is now the Minion, and that werewolves should put their thumbs up. She is on the werewolf team.
 
@@ -251,7 +251,7 @@ If a player receives the Doppelgänger card during the night, she is the role th
 
 > “Doppelgänger, wake up and look at another player’s card. You are now that role. If your new role has a night action, do it now.”
 >
-> *The Doppelgänger opens her eyes and looks at one other player’s card. If the viewed card is the Seer, Robber, Troublemaker, or Drunk, she does that action right now. If the viwed card is a Werewolf or Mason, she wakes up when those roles are called. If the viewed card is a Villager, Tanner or Hunter, she does nothing.*
+> *The Doppelgänger opens her eyes and looks at one other player’s card. If the viewed card is the Seer, Robber, Troublemaker, or Drunk, she does that action right now. If the viewed card is a Werewolf or Mason, she wakes up when those roles are called. If the viewed card is a Villager, Tanner or Hunter, she does nothing.*
 >
 > “Doppelgänger, close your eyes.”
 

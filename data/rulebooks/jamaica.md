@@ -14,7 +14,7 @@ Each player takes a **ship’s hold board** , a **ship** and a matching set of *
 
 Randomly select 9 of the 12 **treasure cards** , shuffle them and place them facedown on the space to the right of the navigation box. The remaining 3 cards go back in the game box unseen.
 
-Place the **combat die** on the fortress and the 9 **treasure tokens** on the 9 pirate lair spaces on the board. Sort the resources ( **food** , **gunpower** and **doubloons** ) by type by the side of the board to form the **bank**.
+Place the **combat die** on the fortress and the 9 **treasure tokens** on the 9 pirate lair spaces on the board. Sort the resources ( **food** , **gunpowder** and **doubloons** ) by type by the side of the board to form the **bank**.
 
 Each player places **3 food tokens** and **3 doubloons** in two of his holds, and draws the first 3 cards from his action deck, keeping them secret.
 
@@ -34,7 +34,7 @@ Randomly select a first player. He gets the **compass** and the 2 **action dice*
 
 ## Loading
 
-If a **loading symbol** is shown ( **food** , **gunpower** or **doubloons** ) the player must load the number of tokens shown by the action die into an _empty_ hold.
+If a **loading symbol** is shown ( **food** , **gunpowder** or **doubloons** ) the player must load the number of tokens shown by the action die into an _empty_ hold.
 
 If the player does not have an empty hold then one must be emptied (return tokens to the bank) to make room. A hold containing the same type of token as the one you are loading cannot be emptied. If all holds are filled with that type, the action is ignored.
 
