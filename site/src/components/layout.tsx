@@ -68,6 +68,7 @@ const Layout: SFC<LayoutProps> = ({ children, title, description }) => (
               content="width=device-width, initial-scale=1"
             />
             <meta name="description" content={description} />
+            <meta name="google-site-verification" content="PTj25G7uAzvoa3ocORIUcIMlVOG_uwk5uq4ktI6ahHY" />
           </Helmet>
           <div className={styles.header}>
             <Header siteTitle={data.site.siteMetadata.title} />
