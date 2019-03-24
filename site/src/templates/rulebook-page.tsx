@@ -38,6 +38,7 @@ const RulebookPage = ({ data }) => {
   const htmlAst = data.markdownRemark.htmlAst
   const headings = data.markdownRemark.headings
   const renderedMarkdown = renderAst(htmlAst)
+  const source = data.markdownRemark.frontmatter.source
 
   return (
     <Layout title={game.name + ' Rules'} description={game.description}>
@@ -55,6 +56,7 @@ const RulebookPage = ({ data }) => {
       />
       <div>
         <h1>{game.name} Rulebook</h1>
+        <Link to={source} openInNewTab={true}>Rulebook Original Source</Link>
         <TableOfContents
           headings={headings}
           rootSlug={game.fields.slug + '/rules'}
@@ -72,6 +74,9 @@ export const query = graphql`
       headings {
         depth
         value
+      }
+      frontmatter {
+        source
       }
     }
 

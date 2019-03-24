@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 import Layout from 'components/layout'
 import Link from 'components/link'
 
+import styles from './index.module.scss'
+
 const alphabeticalSort = (_a, _b) => {
   const a = _a.node
   const b = _b.node
@@ -19,7 +21,7 @@ const IndexPage = ({ data }) => (
     <h1>All Games</h1>
     {data.allGamesHJson.edges.sort(alphabeticalSort).map(({ node }) => {
       return (
-        <div key={node.id}>
+        <div key={node.id} className={styles.game}>
           <Link to={node.fields.slug}>{node.name}</Link>
         </div>
       )
