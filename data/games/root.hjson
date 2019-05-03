@@ -1,0 +1,36 @@
+{
+  name: Root
+  description: Root is a game of adventure and war in which 2 to 4 (1 to 6 with the 'Riverfolk' expansion) players battle for control of a vast wilderness.
+  faqs: [
+    {
+      question: As the Vagabond, can you aid a Woodland Alliance player with just a sympathy token present?
+      answer: Yes, ANY piece counts as "presence" for the purposes of aiding another player as the Vagabond.
+      tags: [
+        'vagabond', 'aid', 'woodland-alliance'
+      ]
+      discussion: [
+        https://boardgamegeek.com/thread/2037173/vagabond-aid-question-what-defines-presence-cleari
+      ]
+    },
+    {
+      question: As the Vagabond, can you aid a Marquise de Cat player with just a wood token present?
+      answer: Yes, ANY piece counts as "presence" for the purposes of aiding another player as the Vagabond. Thematically, since the wood token came from a sawmill, there must be woodsmen there with it.
+      tags: [
+        'vagabond', 'aid', 'marquise-de-cat'
+      ]
+      discussion: [
+        https://boardgamegeek.com/thread/2037173/vagabond-aid-question-what-defines-presence-cleari
+      ]
+    },
+    {
+      question: When the Vagabond gives a card to the Woodland Alliance does it go to their supporters or hand?
+      answer: As the Vagabond, when you Aid any player a card is transferred from your hand to their hand.
+      tags: [
+        'vagabond', 'aid', 'woodland-alliance'
+      ]
+      discussion: [
+        https://boardgamegeek.com/thread/2044727/aid-vagabond-woodland-does-it-go-hand-or-supporter
+      ]
+    }
+  ]
+}
